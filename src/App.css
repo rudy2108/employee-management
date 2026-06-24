@@ -1,0 +1,214 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-heading: var(--font-sans);
+    --font-sans: 'Geist Variable', sans-serif;
+
+    /* ── HRMS Design System fonts ────────────────── */
+    --font-display-lg: 'Plus Jakarta Sans', sans-serif;
+    --font-headline-lg: 'Plus Jakarta Sans', sans-serif;
+    --font-headline-md: 'Plus Jakarta Sans', sans-serif;
+    --font-headline-lg-mobile: 'Plus Jakarta Sans', sans-serif;
+    --font-body-lg: 'Inter', sans-serif;
+    --font-body-md: 'Inter', sans-serif;
+    --font-body-sm: 'Inter', sans-serif;
+    --font-label-md: 'Inter', sans-serif;
+    --font-label-sm: 'Inter', sans-serif;
+
+    /* ── HRMS Design System colors ───────────────── */
+    --color-on-primary-container: #00574d;
+    --color-on-secondary-container: #5c647a;
+    --color-primary: #006b5f;
+    --color-on-tertiary-container: #3636c4;
+    --color-primary-fixed-dim: #3cddc7;
+    --color-secondary: #565e74;
+    --color-tertiary-container: #b6b8ff;
+    --color-surface-container-low: #f2f4f6;
+    --color-on-surface: #191c1e;
+    --color-on-tertiary-fixed: #07006c;
+    --color-surface-container-lowest: #ffffff;
+    --color-surface-container-high: #e6e8ea;
+    --color-secondary-fixed-dim: #bec6e0;
+    --color-on-tertiary-fixed-variant: #2f2ebe;
+    --color-surface-container: #eceef0;
+    --color-surface-container-highest: #e0e3e5;
+    --color-on-background: #191c1e;
+    --color-background: #f7f9fb;
+    --color-error: #ba1a1a;
+    --color-surface-bright: #f7f9fb;
+    --color-surface-variant: #e0e3e5;
+    --color-on-primary-fixed-variant: #005047;
+    --color-inverse-on-surface: #eff1f3;
+    --color-on-primary-fixed: #00201c;
+    --color-on-tertiary: #ffffff;
+    --color-on-surface-variant: #3c4a46;
+    --color-on-error: #ffffff;
+    --color-primary-container: #2dd4bf;
+    --color-surface: #f7f9fb;
+    --color-outline: #6b7a76;
+    --color-inverse-surface: #2d3133;
+    --color-tertiary-fixed: #e1e0ff;
+    --color-primary-fixed: #62fae3;
+    --color-outline-variant: #bacac5;
+    --color-on-secondary-fixed: #131b2e;
+    --color-secondary-container: #dae2fd;
+    --color-inverse-primary: #3cddc7;
+    --color-on-error-container: #93000a;
+    --color-error-container: #ffdad6;
+    --color-on-primary: #ffffff;
+    --color-on-secondary-fixed-variant: #3f465c;
+    --color-on-secondary: #ffffff;
+    --color-surface-dim: #d8dadc;
+    --color-surface-tint: #006b5f;
+    --color-tertiary: #494bd6;
+    --color-tertiary-fixed-dim: #c0c1ff;
+    --color-secondary-fixed: #dae2fd;
+
+    /* ── HRMS Design System font sizes ──────────────── */
+    --text-display-lg: 36px;
+    --text-headline-lg: 24px;
+    --text-headline-md: 18px;
+    --text-body-lg: 16px;
+    --text-body-md: 14px;
+    --text-body-sm: 13px;
+    --text-label-md: 13px;
+    --text-label-sm: 11px;
+
+    /* ── Shadcn-compatible aliases ────────────────── */
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+
+    /* ── Radii ────────────────────────────────────── */
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.145 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.145 0 0);
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary-foreground: oklch(0.205 0 0);
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(0.556 0 0);
+    --accent: oklch(0.97 0 0);
+    --accent-foreground: oklch(0.205 0 0);
+    --destructive: oklch(0.577 0.245 27.325);
+    --border: oklch(0.922 0 0);
+    --input: oklch(0.922 0 0);
+    --ring: oklch(0.708 0 0);
+    --chart-1: oklch(0.87 0 0);
+    --chart-2: oklch(0.556 0 0);
+    --chart-3: oklch(0.439 0 0);
+    --chart-4: oklch(0.371 0 0);
+    --chart-5: oklch(0.269 0 0);
+    --radius: 0.625rem;
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.145 0 0);
+    --sidebar-primary: oklch(0.205 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.97 0 0);
+    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-border: oklch(0.922 0 0);
+    --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.205 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.205 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.556 0 0);
+    --chart-1: oklch(0.87 0 0);
+    --chart-2: oklch(0.556 0 0);
+    --chart-3: oklch(0.439 0 0);
+    --chart-4: oklch(0.371 0 0);
+    --chart-5: oklch(0.269 0 0);
+    --sidebar: oklch(0.205 0 0);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.488 0.243 264.376);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-background text-foreground;
+    }
+  html {
+    @apply font-sans;
+    }
+}
+
+/* ── HRMS utility classes ─────────────────────── */
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.material-symbols-outlined.fill {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.ambient-shadow-surface-1 {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+}
+
+.shadow-glow {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+}

@@ -1,0 +1,908 @@
+{
+  "admins": [
+    {
+      "id": "1",
+      "username": "admin",
+      "email": "admin@company.com",
+      "password": "admin123",
+      "role": "admin",
+      "name": "Super Admin"
+    }
+  ],
+  "employees": [
+    {
+      "fullName": "Priya Patel",
+      "empId": "0002",
+      "email": "priya.patel@gmail.com",
+      "phone": "9876543211",
+      "department": "design",
+      "designation": "UI/UX Designer",
+      "dateOfJoining": "2026-06-02",
+      "status": "probation",
+      "id": "emp002",
+      "totalLeaves": 12
+    },
+    {
+      "fullName": "Rohan Verma",
+      "empId": "0003",
+      "email": "rohan.verma@gmail.com",
+      "phone": "9876543212",
+      "department": "marketing",
+      "designation": "Marketing Executive",
+      "dateOfJoining": "2026-06-03",
+      "status": "full-time",
+      "id": "emp003",
+      "totalLeaves": 12
+    },
+    {
+      "fullName": "Sneha Gupta",
+      "empId": "0004",
+      "email": "sneha.gupta@gmail.com",
+      "phone": "9876543213",
+      "department": "human resources",
+      "designation": "HR Executive",
+      "dateOfJoining": "2026-06-04",
+      "status": "full-time",
+      "id": "emp004",
+      "totalLeaves": 12
+    },
+    {
+      "fullName": "Vikram Singh",
+      "empId": "0005",
+      "email": "vikram.singh@gmail.com",
+      "phone": "9876543214",
+      "department": "engineering",
+      "designation": "Frontend Developer",
+      "dateOfJoining": "2026-06-05",
+      "status": "contract",
+      "id": "emp005",
+      "totalLeaves": 12
+    },
+    {
+      "fullName": "Ananya Mehta",
+      "empId": "0006",
+      "email": "ananya.mehta@gmail.com",
+      "phone": "9876543215",
+      "department": "design",
+      "designation": "Graphic Designer",
+      "dateOfJoining": "2026-06-06",
+      "status": "full-time",
+      "id": "emp006",
+      "totalLeaves": 12
+    },
+    {
+      "fullName": "Karan Joshi",
+      "empId": "0007",
+      "email": "karan.joshi@gmail.com",
+      "phone": "9876543216",
+      "department": "engineering",
+      "designation": "Backend Developer",
+      "dateOfJoining": "2026-06-07",
+      "status": "full-time",
+      "id": "emp007",
+      "totalLeaves": 12
+    },
+    {
+      "fullName": "Neha Kapoor",
+      "empId": "0008",
+      "email": "neha.kapoor@gmail.com",
+      "phone": "9876543217",
+      "department": "marketing",
+      "designation": "SEO Specialist",
+      "dateOfJoining": "2026-06-08",
+      "status": "part-time",
+      "id": "emp008",
+      "totalLeaves": 12
+    },
+    {
+      "fullName": "Aditya Nair",
+      "empId": "0009",
+      "email": "aditya.nair@gmail.com",
+      "phone": "9876543218",
+      "department": "engineering",
+      "designation": "DevOps Engineer",
+      "dateOfJoining": "2026-06-09",
+      "status": "full-time",
+      "id": "emp009",
+      "totalLeaves": 12
+    },
+    {
+      "fullName": "Isha Shah",
+      "empId": "0010",
+      "email": "isha.shah@gmail.com",
+      "phone": "9876543219",
+      "department": "human resources",
+      "designation": "Recruiter",
+      "dateOfJoining": "2026-06-10",
+      "status": "probation",
+      "id": "emp010",
+      "totalLeaves": 12
+    },
+    {
+      "fullName": "Rahul Desai",
+      "empId": "0011",
+      "email": "rahul.desai@gmail.com",
+      "phone": "9876543220",
+      "department": "engineering",
+      "designation": "QA Engineer",
+      "dateOfJoining": "2026-06-11",
+      "status": "full-time",
+      "id": "emp011",
+      "totalLeaves": 12
+    },
+    {
+      "fullName": "Pooja Trivedi",
+      "empId": "0012",
+      "email": "pooja.trivedi@gmail.com",
+      "phone": "9876543221",
+      "department": "design",
+      "designation": "Product Designer",
+      "dateOfJoining": "2026-06-12",
+      "status": "full-time",
+      "id": "emp012",
+      "totalLeaves": 12
+    },
+    {
+      "fullName": "Manav Shah",
+      "empId": "0013",
+      "email": "manav.shah@gmail.com",
+      "phone": "9876543222",
+      "department": "marketing",
+      "designation": "Content Writer",
+      "dateOfJoining": "2026-06-13",
+      "status": "part-time",
+      "id": "emp013",
+      "totalLeaves": 12
+    },
+    {
+      "fullName": "Riya Malhotra",
+      "empId": "0014",
+      "email": "riya.malhotra@gmail.com",
+      "phone": "9876543223",
+      "department": "engineering",
+      "designation": "Software Engineer",
+      "dateOfJoining": "2026-06-14",
+      "status": "full-time",
+      "id": "emp014",
+      "totalLeaves": 12
+    },
+    {
+      "fullName": "Harsh Patel",
+      "empId": "0015",
+      "email": "harsh.patel@gmail.com",
+      "phone": "9876543224",
+      "department": "engineering",
+      "designation": "Team Lead",
+      "dateOfJoining": "2026-06-15",
+      "status": "full-time",
+      "id": "emp015",
+      "totalLeaves": 12
+    },
+    {
+      "fullName": "Nidhi Jain",
+      "empId": "0016",
+      "email": "nidhi.jain@gmail.com",
+      "phone": "9876543225",
+      "department": "human resources",
+      "designation": "HR Manager",
+      "dateOfJoining": "2026-06-16",
+      "status": "full-time",
+      "id": "emp016",
+      "totalLeaves": 12
+    },
+    {
+      "fullName": "Yash Bhatt",
+      "empId": "0017",
+      "email": "yash.bhatt@gmail.com",
+      "phone": "9876543226",
+      "department": "marketing",
+      "designation": "Digital Marketer",
+      "dateOfJoining": "2026-06-17",
+      "status": "contract",
+      "id": "emp017",
+      "totalLeaves": 12
+    },
+    {
+      "fullName": "Simran Kaur",
+      "empId": "0018",
+      "email": "simran.kaur@gmail.com",
+      "phone": "9876543227",
+      "department": "design",
+      "designation": "Visual Designer",
+      "dateOfJoining": "2026-06-18",
+      "status": "full-time",
+      "id": "emp018",
+      "totalLeaves": 12
+    },
+    {
+      "fullName": "Akash Kumar",
+      "empId": "0019",
+      "email": "akash.kumar@gmail.com",
+      "phone": "9876543228",
+      "department": "engineering",
+      "designation": "Backend Developer",
+      "dateOfJoining": "2026-06-19",
+      "status": "probation",
+      "id": "emp019",
+      "totalLeaves": 12
+    },
+    {
+      "fullName": "Tanvi Arora",
+      "empId": "0020",
+      "email": "tanvi.arora@gmail.com",
+      "phone": "9876543229",
+      "department": "marketing",
+      "designation": "Brand Executive",
+      "dateOfJoining": "2026-06-20",
+      "status": "full-time",
+      "id": "emp020",
+      "totalLeaves": 12
+    },
+    {
+      "fullName": "Jim Halpert",
+      "email": "jim.halpert@gmail.com",
+      "phone": "9876540001",
+      "designation": "Sales Representative",
+      "department": "sales",
+      "dateOfJoining": "2026-06-22",
+      "status": "probation",
+      "empId": "0021",
+      "id": "V8_I7R2bXLc",
+      "totalLeaves": 12
+    },
+    {
+      "fullName": "Dwight Schrute",
+      "email": "dwight.schrute@gmail.com",
+      "phone": "9876540002",
+      "designation": "Assistant Regional Manager",
+      "department": "management",
+      "dateOfJoining": "2026-06-22",
+      "status": "probation",
+      "empId": "0022",
+      "id": "Tx0wqpoxmCI",
+      "totalLeaves": 12
+    },
+    {
+      "fullName": "Stanley Hudson",
+      "email": "stanley.hudson@gmail.com",
+      "phone": "9876540003",
+      "designation": "Senior Sales",
+      "department": "sales",
+      "dateOfJoining": "2026-06-22",
+      "status": "probation",
+      "empId": "0023",
+      "id": "S06LQzSFzwI",
+      "totalLeaves": 12
+    },
+    {
+      "fullName": "Angela Martin",
+      "email": "angela.martin@gmail.com",
+      "phone": "9876540004",
+      "designation": "Senior Accountant",
+      "department": "finance",
+      "dateOfJoining": "2026-06-22",
+      "status": "probation",
+      "empId": "0024",
+      "id": "-A5IwFirr8E",
+      "totalLeaves": 12
+    }
+  ],
+  "leaves": [
+    {
+      "employeeId": null,
+      "status": "approved",
+      "type": "Immediate Leave",
+      "duration": "2026-06-24 to 2026-06-25",
+      "appliedDate": "2026-06-23",
+      "reason": "I am requesting leave for two days due to a high fever and doctor's recommendation for complete rest.",
+      "startDate": "2026-06-24",
+      "endDate": "2026-06-25",
+      "id": "Pon_yIVHE2o"
+    },
+    {
+      "employeeId": "emp005",
+      "status": "pending",
+      "type": "Regular Leave",
+      "duration": "2026-06-29 to 2026-07-01",
+      "appliedDate": "2026-06-24",
+      "reason": "I am requesting leave for two days due to a high fever and doctor's recommendation for complete rest.",
+      "startDate": "2026-06-29",
+      "endDate": "2026-07-01",
+      "id": "c_xV_JPdcJ0"
+    },
+    {
+      "employeeId": "emp010",
+      "status": "approved",
+      "type": "Regular Leave",
+      "duration": "2026-06-30 to 2026-07-03",
+      "appliedDate": "2026-06-24",
+      "reason": "I need leave to attend a family function that requires my presence out of town.",
+      "startDate": "2026-06-30",
+      "endDate": "2026-07-03",
+      "id": "KtK7vyA5UNY"
+    },
+    {
+      "employeeId": "emp015",
+      "status": "hr_rejected",
+      "type": "Immediate Leave",
+      "duration": "2026-07-06 to 2026-07-10",
+      "appliedDate": "2026-06-24",
+      "reason": "I am requesting leave to take care of my father, who is undergoing a medical procedure.",
+      "startDate": "2026-07-06",
+      "endDate": "2026-07-10",
+      "id": "_B2zfg2DFxU"
+    },
+    {
+      "employeeId": "V8_I7R2bXLc",
+      "status": "pending",
+      "type": "Immediate Leave",
+      "duration": "1 day",
+      "appliedDate": "2026-06-24",
+      "reason": "I need leave to manage urgent household maintenance and repair work.",
+      "startDate": "2026-06-26",
+      "endDate": "2026-06-26",
+      "id": "Z6ecT0weIlg"
+    }
+  ],
+  "holidays": [
+    {
+      "id": "1",
+      "name": "Independence Day",
+      "date": "Aug 15, 2026",
+      "type": "Public"
+    },
+    {
+      "id": "2",
+      "name": "Raksha Bandhan",
+      "date": "Aug 28, 2026",
+      "type": "Optional"
+    },
+    {
+      "id": "3",
+      "name": "Janmashtami",
+      "date": "Sep 03, 2026",
+      "type": "Optional"
+    },
+    {
+      "id": "4",
+      "name": "Gandhi Jayanti",
+      "date": "Oct 02, 2026",
+      "type": "Public"
+    },
+    {
+      "id": "5",
+      "name": "Diwali",
+      "date": "Nov 08, 2026",
+      "type": "Public"
+    },
+    {
+      "id": "6",
+      "name": "Christmas Day",
+      "date": "Dec 25, 2026",
+      "type": "Public"
+    },
+    {
+      "id": "7",
+      "name": "New Year's Day",
+      "date": "Jan 01, 2027",
+      "type": "Public"
+    },
+    {
+      "id": "8",
+      "name": "Republic Day",
+      "date": "Jan 26, 2027",
+      "type": "Public"
+    },
+    {
+      "id": "9",
+      "name": "Holi",
+      "date": "Mar 22, 2027",
+      "type": "Public"
+    },
+    {
+      "id": "10",
+      "name": "Good Friday",
+      "date": "Mar 26, 2027",
+      "type": "Optional"
+    },
+    {
+      "id": "11",
+      "name": "Labor Day",
+      "date": "May 01, 2027",
+      "type": "Public"
+    },
+    {
+      "id": "12",
+      "name": "Independence Day",
+      "date": "Aug 15, 2027",
+      "type": "Public"
+    },
+    {
+      "id": "14",
+      "name": "Gandhi Jayanti",
+      "date": "Oct 02, 2027",
+      "type": "Public"
+    },
+    {
+      "id": "15",
+      "name": "Diwali",
+      "date": "Oct 29, 2027",
+      "type": "Public"
+    },
+    {
+      "id": "16",
+      "name": "Christmas Day",
+      "date": "Dec 25, 2027",
+      "type": "Public"
+    }
+  ],
+  "policies": [
+    {
+      "id": "1",
+      "name": "Remote Work Policy",
+      "category": "Operational",
+      "lastUpdated": "Oct 12, 2023",
+      "description": "Guidelines for remote work and work-from-home policies",
+      "effectiveDate": "2023-10-12"
+    },
+    {
+      "id": "2",
+      "name": "Code of Conduct",
+      "category": "General",
+      "lastUpdated": "Sep 28, 2023",
+      "description": "Professional conduct and workplace etiquette guidelines",
+      "effectiveDate": "2023-09-28"
+    },
+    {
+      "id": "3",
+      "name": "Data Privacy",
+      "category": "Legal",
+      "lastUpdated": "Aug 15, 2023",
+      "description": "Data privacy and information security policy",
+      "effectiveDate": "2023-08-15"
+    }
+  ],
+  "problems": [
+    {
+      "ticketId": "TKT-1877",
+      "employeeId": "emp003",
+      "category": "Harassment",
+      "status": "open",
+      "priority": "high",
+      "filedDate": "2026-06-24",
+      "description": "I have been experiencing repeated inappropriate comments and disrespectful behavior from a colleague, creating an uncomfortable work environment. I request HR to investigate this matter confidentially",
+      "id": "IZhWT2P3UjA"
+    },
+    {
+      "ticketId": "TKT-3772",
+      "employeeId": "emp015",
+      "category": "Work Environment",
+      "status": "open",
+      "priority": "medium",
+      "filedDate": "2026-06-24",
+      "description": "My attendance for 15 June 2026 is marked as absent even though I was present and completed my full workday. Kindly verify and correct the attendance record",
+      "id": "pqOZ8E5DbKw"
+    },
+    {
+      "ticketId": "TKT-5709",
+      "employeeId": "emp019",
+      "category": "Work Environment",
+      "status": "open",
+      "priority": "low",
+      "filedDate": "2026-06-24",
+      "description": "My leave balance was reduced incorrectly after submitting a leave request. The deduction does not match the number of approved leave days. Please review and update the records",
+      "id": "zp_uxO-JmN8"
+    },
+    {
+      "ticketId": "TKT-4008",
+      "employeeId": "Tx0wqpoxmCI",
+      "category": "Pay Dispute",
+      "status": "open",
+      "priority": "high",
+      "filedDate": "2026-06-24",
+      "description": "My salary for this month does not include the overtime hours I worked. I request a review of the payroll calculation and clarification regarding the missing amount.",
+      "id": "O43GRg-l-QA"
+    }
+  ],
+  "jobApplications": [
+    {
+      "id": "app001",
+      "fullName": "Jim Halpert",
+      "email": "jim.halpert@gmail.com",
+      "phone": "9876540001",
+      "position": "Sales Representative",
+      "department": "sales",
+      "appliedDate": "Oct 28, 2023",
+      "status": "approved"
+    },
+    {
+      "id": "app002",
+      "fullName": "Dwight Schrute",
+      "email": "dwight.schrute@gmail.com",
+      "phone": "9876540002",
+      "position": "Assistant Regional Manager",
+      "department": "management",
+      "appliedDate": "Oct 27, 2023",
+      "status": "approved"
+    },
+    {
+      "id": "app003",
+      "fullName": "Stanley Hudson",
+      "email": "stanley.hudson@gmail.com",
+      "phone": "9876540003",
+      "position": "Senior Sales",
+      "department": "sales",
+      "appliedDate": "Oct 26, 2023",
+      "status": "approved"
+    },
+    {
+      "id": "app004",
+      "fullName": "Angela Martin",
+      "email": "angela.martin@gmail.com",
+      "phone": "9876540004",
+      "position": "Senior Accountant",
+      "department": "finance",
+      "appliedDate": "Oct 25, 2023",
+      "status": "approved"
+    },
+    {
+      "id": "app005",
+      "fullName": "Kevin Malone",
+      "email": "kevin.malone@gmail.com",
+      "phone": "9876540005",
+      "position": "Junior Accountant",
+      "department": "finance",
+      "appliedDate": "Oct 24, 2023",
+      "status": "rejected"
+    }
+  ],
+  "pageConfigs": [
+    {
+      "id": "dashboard",
+      "page": "dashboard",
+      "title": "Dashboard Overview",
+      "subtitle": "Here's what's happening in your organization today."
+    },
+    {
+      "id": "employeeManagement",
+      "page": "employeeManagement",
+      "title": "Employee Management",
+      "subtitle": "Manage and view all team members in your organization."
+    },
+    {
+      "id": "leave",
+      "page": "leave",
+      "title": "Leave Administration",
+      "subtitle": "Manage organization-wide leave requests and policies."
+    },
+    {
+      "id": "problems",
+      "page": "problems",
+      "title": "Employee Problems & Grievances",
+      "subtitle": "Manage, track, and resolve employee workplace concerns and disciplinary issues."
+    },
+    {
+      "id": "hrAdmin",
+      "page": "hrAdmin",
+      "title": "HR Administration",
+      "subtitle": "Manage company-level configurations, policies, and departments."
+    },
+    {
+      "id": "addEmployee",
+      "page": "addEmployee",
+      "title": "Add New Employee",
+      "subtitle": "Enter the details below to register a new team member."
+    }
+  ],
+  "pageStats": [
+    {
+      "id": "dash-1",
+      "page": "dashboard",
+      "key": "totalEmployees",
+      "title": "Total Employees",
+      "icon": "badge",
+      "iconBg": "bg-primary-container/20",
+      "iconColor": "text-primary"
+    },
+    {
+      "id": "dash-2",
+      "page": "dashboard",
+      "key": "openProblems",
+      "title": "Open Problems",
+      "icon": "report_problem",
+      "iconBg": "bg-error-container/50",
+      "iconColor": "text-error"
+    },
+    {
+      "id": "dash-3",
+      "page": "dashboard",
+      "key": "pendingLeaves",
+      "title": "Pending Leaves",
+      "icon": "pending_actions",
+      "iconBg": "bg-[#F59E0B]/10",
+      "iconColor": "text-[#F59E0B]"
+    },
+    {
+      "id": "dash-4",
+      "page": "dashboard",
+      "key": "jobApplications",
+      "title": "Job Applications",
+      "icon": "person_search",
+      "iconBg": "bg-primary-container/20",
+      "iconColor": "text-primary"
+    },
+    {
+      "id": "emp-1",
+      "page": "employeeManagement",
+      "key": "totalEmployees",
+      "title": "Total Employees",
+      "icon": "groups",
+      "iconBg": "bg-primary-container/20",
+      "iconColor": "text-primary"
+    },
+    {
+      "id": "emp-2",
+      "page": "employeeManagement",
+      "key": "fullTime",
+      "title": "Full-Time",
+      "icon": "work",
+      "iconBg": "bg-primary-container/20",
+      "iconColor": "text-primary"
+    },
+    {
+      "id": "emp-3",
+      "page": "employeeManagement",
+      "key": "contract",
+      "title": "Contract",
+      "icon": "assignment",
+      "iconBg": "bg-[#F59E0B]/10",
+      "iconColor": "text-[#F59E0B]"
+    },
+    {
+      "id": "emp-4",
+      "page": "employeeManagement",
+      "key": "probation",
+      "title": "Probation",
+      "icon": "hourglass_empty",
+      "iconBg": "bg-primary-container/20",
+      "iconColor": "text-primary"
+    },
+    {
+      "id": "leave-1",
+      "page": "leave",
+      "key": "totalLeaveRequests",
+      "title": "Total Leave Requests",
+      "icon": "group",
+      "iconBg": "bg-primary-container/20",
+      "iconColor": "text-primary"
+    },
+    {
+      "id": "leave-2",
+      "page": "leave",
+      "key": "pendingAdminReview",
+      "title": "Pending Admin Review",
+      "icon": "pending_actions",
+      "iconBg": "bg-error-container/50",
+      "iconColor": "text-error"
+    },
+    {
+      "id": "leave-3",
+      "page": "leave",
+      "key": "approvedRequests",
+      "title": "Approved Requests",
+      "icon": "check_circle",
+      "iconBg": "bg-tertiary-container/50",
+      "iconColor": "text-tertiary"
+    },
+    {
+      "id": "prob-1",
+      "page": "problems",
+      "key": "openIssues",
+      "title": "Open Issues",
+      "icon": "folder_open",
+      "iconBg": "bg-primary-container/20",
+      "iconColor": "text-primary"
+    },
+    {
+      "id": "prob-2",
+      "page": "problems",
+      "key": "pendingInvestigation",
+      "title": "Pending Investigation",
+      "icon": "hourglass_empty",
+      "iconBg": "bg-[#F59E0B]/10",
+      "iconColor": "text-[#F59E0B]"
+    },
+    {
+      "id": "prob-3",
+      "page": "problems",
+      "key": "resolvedThisMonth",
+      "title": "Resolved this Month",
+      "icon": "verified",
+      "iconBg": "bg-green-100",
+      "iconColor": "text-green-700"
+    },
+    {
+      "id": "prob-4",
+      "page": "problems",
+      "key": "highPriority",
+      "title": "High Priority",
+      "icon": "priority_high",
+      "iconBg": "bg-red-100",
+      "iconColor": "text-red-600"
+    },
+    {
+      "id": "hr-1",
+      "page": "hrAdmin",
+      "key": "totalDepartments",
+      "title": "Total Departments",
+      "icon": "domain",
+      "iconBg": "bg-primary-container/20",
+      "iconColor": "text-primary"
+    },
+    {
+      "id": "hr-2",
+      "page": "hrAdmin",
+      "key": "pendingApprovals",
+      "title": "Pending Approvals",
+      "icon": "pending_actions",
+      "iconBg": "bg-[#F59E0B]/10",
+      "iconColor": "text-[#F59E0B]"
+    },
+    {
+      "id": "hr-3",
+      "page": "hrAdmin",
+      "key": "recentJobApplications",
+      "title": "Recent Job Applications",
+      "icon": "person_search",
+      "iconBg": "bg-primary-container/20",
+      "iconColor": "text-primary"
+    },
+    {
+      "id": "hr-4",
+      "page": "hrAdmin",
+      "key": "totalEmployees",
+      "title": "Total Employees",
+      "icon": "groups",
+      "iconBg": "bg-primary-container/20",
+      "iconColor": "text-primary"
+    }
+  ],
+  "departments": [
+    {
+      "id": "1",
+      "value": "engineering",
+      "label": "Engineering"
+    },
+    {
+      "id": "2",
+      "value": "design",
+      "label": "Design"
+    },
+    {
+      "id": "3",
+      "value": "human resources",
+      "label": "Human Resources"
+    },
+    {
+      "id": "4",
+      "value": "marketing",
+      "label": "Marketing"
+    },
+    {
+      "id": "5",
+      "value": "sales",
+      "label": "Sales"
+    },
+    {
+      "id": "6",
+      "value": "management",
+      "label": "Management"
+    },
+    {
+      "id": "7",
+      "value": "finance",
+      "label": "Finance"
+    }
+  ],
+  "employmentStatuses": [
+    {
+      "id": "1",
+      "value": "full-time",
+      "label": "Full-Time"
+    },
+    {
+      "id": "2",
+      "value": "part-time",
+      "label": "Part-Time"
+    },
+    {
+      "id": "3",
+      "value": "contract",
+      "label": "Contractor"
+    },
+    {
+      "id": "4",
+      "value": "probation",
+      "label": "Probation"
+    }
+  ],
+  "policyCategories": [
+    {
+      "id": "1",
+      "value": "Operational",
+      "label": "Operational"
+    },
+    {
+      "id": "2",
+      "value": "General",
+      "label": "General"
+    },
+    {
+      "id": "3",
+      "value": "Legal",
+      "label": "Legal"
+    }
+  ],
+  "holidayTypes": [
+    {
+      "id": "1",
+      "value": "Public",
+      "label": "Public"
+    },
+    {
+      "id": "2",
+      "value": "Optional",
+      "label": "Optional"
+    }
+  ],
+  "problemCategories": [
+    {
+      "id": "1",
+      "value": "Harassment",
+      "label": "Harassment"
+    },
+    {
+      "id": "2",
+      "value": "Pay Dispute",
+      "label": "Pay Dispute"
+    },
+    {
+      "id": "3",
+      "value": "Workplace Safety",
+      "label": "Workplace Safety"
+    },
+    {
+      "id": "4",
+      "value": "Discrimination",
+      "label": "Discrimination"
+    },
+    {
+      "id": "5",
+      "value": "Work Environment",
+      "label": "Work Environment"
+    }
+  ],
+  "problemPriorities": [
+    {
+      "id": "1",
+      "value": "low",
+      "label": "Low"
+    },
+    {
+      "id": "2",
+      "value": "medium",
+      "label": "Medium"
+    },
+    {
+      "id": "3",
+      "value": "high",
+      "label": "High"
+    },
+    {
+      "id": "4",
+      "value": "critical",
+      "label": "Critical"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
