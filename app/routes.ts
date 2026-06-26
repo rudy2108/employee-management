@@ -12,6 +12,9 @@ export default [
     route('leave', './pages/adminPages/AdminLeaveManagement.tsx'),
     route('employee-problems', './pages/adminPages/AdminEmployeeProblems.tsx'),
     route('employee-dashboard', './pages/employeePages/EmployeeDashboard.tsx'),
+    route('employee-profile', './pages/employeePages/EmployeeProfile.tsx'),
+    route('employee-leave', './pages/employeePages/EmployeeLeave.tsx'),
+    route('employee-support', './pages/employeePages/EmployeeSupport.tsx'),
   ]),
   route('*', './pages/RedirectToLogin.tsx', { id: 'catch-all' }),
 ] satisfies RouteConfig

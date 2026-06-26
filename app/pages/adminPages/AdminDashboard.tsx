@@ -26,7 +26,7 @@ const STATUS_CFG: Record<string, { label: string; bar: string; text: string }> =
   contract: { label: "Contract", bar: "bg-[#8B5CF6]", text: "text-[#8B5CF6]" },
   probation: { label: "Probation", bar: "bg-[#EC4899]", text: "text-[#EC4899]" },
 };
-
+  
 export default function DashboardPage() {
   const { data: employees = [] } = useQuery({ queryKey: ['employees'], queryFn: employeeAPI.fetchAll });
   const { data: leaveRequests = [] } = useQuery({ queryKey: ['leaves'], queryFn: leaveAPI.fetchAll });

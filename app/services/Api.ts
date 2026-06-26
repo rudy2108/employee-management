@@ -11,6 +11,8 @@ export interface Employee {
   dateOfJoining: string
   status: string
   totalLeaves: number
+  sickLeaves?: number
+  personalLeaves?: number
 }
 
 const API_BASE_URL = 'http://localhost:3000' // json-server runs on port 3000
@@ -57,7 +59,7 @@ apiClient.interceptors.response.use(
             try {
               const { data } = await axios.post('https://dummyjson.com/auth/refresh', {
                 refreshToken: admin.refreshToken,
-                expiresInMins: 30,
+                expiresInMins: 1,
               })
 
               const updatedAdmin = {

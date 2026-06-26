@@ -12,6 +12,8 @@
   "employees": [
     {
       "fullName": "Priya Patel",
+      "username": "priya.patel@gmail.com",
+      "password": "Password@123",
       "empId": "0002",
       "email": "priya.patel@gmail.com",
       "phone": "9876543211",
@@ -20,10 +22,14 @@
       "dateOfJoining": "2026-06-02",
       "status": "probation",
       "totalLeaves": 12,
-      "id": "emp002"
+      "id": "emp002",
+      "sickLeaves": 10,
+      "personalLeaves": 2
     },
     {
       "fullName": "Rohan Verma",
+      "username": "rohan.verma@gmail.com",
+      "password": "Password@123",
       "empId": "0003",
       "email": "rohan.verma@gmail.com",
       "phone": "9876543212",
@@ -32,10 +38,14 @@
       "dateOfJoining": "2026-06-03",
       "status": "full-time",
       "id": "emp003",
-      "totalLeaves": 12
+      "totalLeaves": 12,
+      "sickLeaves": 8,
+      "personalLeaves": 4
     },
     {
       "fullName": "Sneha Gupta",
+      "username": "sneha.gupta@gmail.com",
+      "password": "Password@123",
       "empId": "0004",
       "email": "sneha.gupta@gmail.com",
       "phone": "9876543213",
@@ -44,10 +54,14 @@
       "dateOfJoining": "2026-06-04",
       "status": "full-time",
       "id": "emp004",
-      "totalLeaves": 12
+      "totalLeaves": 12,
+      "sickLeaves": 4,
+      "personalLeaves": 8
     },
     {
       "fullName": "Vikram Singh",
+      "username": "vikram.singh@gmail.com",
+      "password": "Password@123",
       "empId": "0005",
       "email": "vikram.singh@gmail.com",
       "phone": "9876543214",
@@ -56,10 +70,14 @@
       "dateOfJoining": "2026-06-05",
       "status": "contract",
       "id": "emp005",
-      "totalLeaves": 12
+      "totalLeaves": 12,
+      "sickLeaves": 9,
+      "personalLeaves": 3
     },
     {
       "fullName": "Ananya Mehta",
+      "username": "ananya.mehta@gmail.com",
+      "password": "Password@123",
       "empId": "0006",
       "email": "ananya.mehta@gmail.com",
       "phone": "9876543215",
@@ -68,10 +86,14 @@
       "dateOfJoining": "2026-06-06",
       "status": "full-time",
       "id": "emp006",
-      "totalLeaves": 12
+      "totalLeaves": 12,
+      "sickLeaves": 3,
+      "personalLeaves": 9
     },
     {
       "fullName": "Karan Joshi",
+      "username": "karan.joshi@gmail.com",
+      "password": "Password@123",
       "empId": "0007",
       "email": "karan.joshi@gmail.com",
       "phone": "9876543216",
@@ -80,10 +102,14 @@
       "dateOfJoining": "2026-06-07",
       "status": "full-time",
       "id": "emp007",
-      "totalLeaves": 12
+      "totalLeaves": 12,
+      "sickLeaves": 2,
+      "personalLeaves": 10
     },
     {
       "fullName": "Neha Kapoor",
+      "username": "neha.kapoor@gmail.com",
+      "password": "Password@123",
       "empId": "0008",
       "email": "neha.kapoor@gmail.com",
       "phone": "9876543217",
@@ -92,10 +118,14 @@
       "dateOfJoining": "2026-06-08",
       "status": "part-time",
       "id": "emp008",
-      "totalLeaves": 12
+      "totalLeaves": 12,
+      "sickLeaves": 7,
+      "personalLeaves": 5
     },
     {
       "fullName": "Aditya Nair",
+      "username": "aditya.nair@gmail.com",
+      "password": "Password@123",
       "empId": "0009",
       "email": "aditya.nair@gmail.com",
       "phone": "9876543218",
@@ -104,10 +134,14 @@
       "dateOfJoining": "2026-06-09",
       "status": "full-time",
       "id": "emp009",
-      "totalLeaves": 12
+      "totalLeaves": 12,
+      "sickLeaves": 3,
+      "personalLeaves": 9
     },
     {
       "fullName": "Isha Shah",
+      "username": "isha.shah@gmail.com",
+      "password": "Password@123",
       "empId": "0010",
       "email": "isha.shah@gmail.com",
       "phone": "9876543219",
@@ -116,10 +150,14 @@
       "dateOfJoining": "2026-06-10",
       "status": "probation",
       "id": "emp010",
-      "totalLeaves": 12
+      "totalLeaves": 12,
+      "sickLeaves": 5,
+      "personalLeaves": 7
     },
     {
       "fullName": "Rahul Desai",
+      "username": "rahul.desai@gmail.com",
+      "password": "Password@123",
       "empId": "0011",
       "email": "rahul.desai@gmail.com",
       "phone": "9876543220",
@@ -128,10 +166,14 @@
       "dateOfJoining": "2026-06-11",
       "status": "full-time",
       "id": "emp011",
-      "totalLeaves": 12
+      "totalLeaves": 12,
+      "sickLeaves": 9,
+      "personalLeaves": 3
     },
     {
       "fullName": "Pooja Trivedi",
+      "username": "pooja.trivedi@gmail.com",
+      "password": "Password@123",
       "empId": "0012",
       "email": "pooja.trivedi@gmail.com",
       "phone": "9876543221",
@@ -140,10 +182,14 @@
       "dateOfJoining": "2026-06-12",
       "status": "full-time",
       "id": "emp012",
-      "totalLeaves": 12
+      "totalLeaves": 12,
+      "sickLeaves": 2,
+      "personalLeaves": 10
     },
     {
       "fullName": "Manav Shah",
+      "username": "manav.shah@gmail.com",
+      "password": "Password@123",
       "empId": "0013",
       "email": "manav.shah@gmail.com",
       "phone": "9876543222",
@@ -152,10 +198,14 @@
       "dateOfJoining": "2026-06-13",
       "status": "part-time",
       "id": "emp013",
-      "totalLeaves": 12
+      "totalLeaves": 12,
+      "sickLeaves": 6,
+      "personalLeaves": 6
     },
     {
       "fullName": "Riya Malhotra",
+      "username": "riya.malhotra@gmail.com",
+      "password": "Password@123",
       "empId": "0014",
       "email": "riya.malhotra@gmail.com",
       "phone": "9876543223",
@@ -164,10 +214,14 @@
       "dateOfJoining": "2026-06-14",
       "status": "full-time",
       "id": "emp014",
-      "totalLeaves": 12
+      "totalLeaves": 12,
+      "sickLeaves": 5,
+      "personalLeaves": 7
     },
     {
       "fullName": "Harsh Patel",
+      "username": "harsh.patel@gmail.com",
+      "password": "Password@123",
       "empId": "0015",
       "email": "harsh.patel@gmail.com",
       "phone": "9876543224",
@@ -176,10 +230,14 @@
       "dateOfJoining": "2026-06-15",
       "status": "full-time",
       "id": "emp015",
-      "totalLeaves": 12
+      "totalLeaves": 12,
+      "sickLeaves": 4,
+      "personalLeaves": 8
     },
     {
       "fullName": "Nidhi Jain",
+      "username": "nidhi.jain@gmail.com",
+      "password": "Password@123",
       "empId": "0016",
       "email": "nidhi.jain@gmail.com",
       "phone": "9876543225",
@@ -188,10 +246,14 @@
       "dateOfJoining": "2026-06-16",
       "status": "full-time",
       "id": "emp016",
-      "totalLeaves": 12
+      "totalLeaves": 12,
+      "sickLeaves": 2,
+      "personalLeaves": 10
     },
     {
       "fullName": "Yash Bhatt",
+      "username": "yash.bhatt@gmail.com",
+      "password": "Password@123",
       "empId": "0017",
       "email": "yash.bhatt@gmail.com",
       "phone": "9876543226",
@@ -200,10 +262,14 @@
       "dateOfJoining": "2026-06-17",
       "status": "contract",
       "id": "emp017",
-      "totalLeaves": 12
+      "totalLeaves": 12,
+      "sickLeaves": 7,
+      "personalLeaves": 5
     },
     {
       "fullName": "Simran Kaur",
+      "username": "simran.kaur@gmail.com",
+      "password": "Password@123",
       "empId": "0018",
       "email": "simran.kaur@gmail.com",
       "phone": "9876543227",
@@ -212,10 +278,14 @@
       "dateOfJoining": "2026-06-18",
       "status": "full-time",
       "id": "emp018",
-      "totalLeaves": 12
+      "totalLeaves": 12,
+      "sickLeaves": 6,
+      "personalLeaves": 6
     },
     {
       "fullName": "Akash Kumar",
+      "username": "akash.kumar@gmail.com",
+      "password": "Password@123",
       "empId": "0019",
       "email": "akash.kumar@gmail.com",
       "phone": "9876543228",
@@ -224,10 +294,14 @@
       "dateOfJoining": "2026-06-19",
       "status": "probation",
       "id": "emp019",
-      "totalLeaves": 12
+      "totalLeaves": 12,
+      "sickLeaves": 8,
+      "personalLeaves": 4
     },
     {
       "fullName": "Tanvi Arora",
+      "username": "tanvi.arora@gmail.com",
+      "password": "Password@123",
       "empId": "0020",
       "email": "tanvi.arora@gmail.com",
       "phone": "9876543229",
@@ -236,10 +310,14 @@
       "dateOfJoining": "2026-06-20",
       "status": "full-time",
       "id": "emp020",
-      "totalLeaves": 12
+      "totalLeaves": 12,
+      "sickLeaves": 5,
+      "personalLeaves": 7
     },
     {
       "fullName": "Jim Halpert",
+      "username": "jim.halpert@gmail.com",
+      "password": "Password@123",
       "email": "jim.halpert@gmail.com",
       "phone": "9876540001",
       "designation": "Sales Representative",
@@ -248,10 +326,14 @@
       "status": "probation",
       "empId": "0021",
       "id": "V8_I7R2bXLc",
-      "totalLeaves": 12
+      "totalLeaves": 12,
+      "sickLeaves": 2,
+      "personalLeaves": 10
     },
     {
       "fullName": "Dwight Schrute",
+      "username": "dwight.schrute@gmail.com",
+      "password": "Password@123",
       "email": "dwight.schrute@gmail.com",
       "phone": "9876540002",
       "designation": "Assistant Regional Manager",
@@ -260,10 +342,14 @@
       "status": "probation",
       "empId": "0022",
       "id": "Tx0wqpoxmCI",
-      "totalLeaves": 12
+      "totalLeaves": 12,
+      "sickLeaves": 9,
+      "personalLeaves": 3
     },
     {
       "fullName": "Stanley Hudson",
+      "username": "stanley.hudson@gmail.com",
+      "password": "Password@123",
       "email": "stanley.hudson@gmail.com",
       "phone": "9876540003",
       "designation": "Senior Sales",
@@ -272,10 +358,14 @@
       "status": "probation",
       "empId": "0023",
       "id": "S06LQzSFzwI",
-      "totalLeaves": 12
+      "totalLeaves": 12,
+      "sickLeaves": 10,
+      "personalLeaves": 2
     },
     {
       "fullName": "Angela Martin",
+      "username": "angela.martin@gmail.com",
+      "password": "Password@123",
       "email": "angela.martin@gmail.com",
       "phone": "9876540004",
       "designation": "Senior Accountant",
@@ -284,7 +374,9 @@
       "status": "probation",
       "empId": "0024",
       "id": "-A5IwFirr8E",
-      "totalLeaves": 12
+      "totalLeaves": 12,
+      "sickLeaves": 9,
+      "personalLeaves": 3
     }
   ],
   "leaves": [
@@ -309,6 +401,17 @@
       "startDate": "2026-07-06",
       "endDate": "2026-07-10",
       "id": "_B2zfg2DFxU"
+    },
+    {
+      "employeeId": "emp003",
+      "status": "approved",
+      "type": "Regular Leave",
+      "duration": "2026-07-01 to 2026-07-03",
+      "appliedDate": "2026-06-26",
+      "reason": "leave",
+      "startDate": "2026-07-01",
+      "endDate": "2026-07-03",
+      "id": "kgRuBEVe4VM"
     }
   ],
   "holidays": [

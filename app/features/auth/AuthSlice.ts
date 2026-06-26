@@ -4,7 +4,7 @@ import axios from 'axios'
 const JSON_SERVER_URL = 'http://localhost:3000'
 
 export interface Admin {
-  id: number
+  id: number | string
   username: string
   email: string
   role: string
@@ -12,6 +12,14 @@ export interface Admin {
   token?: string
   refreshToken?: string
   image?: string
+  // Employee-specific fields (populated when role === 'employee')
+  empId?: string
+  phone?: string
+  department?: string
+  designation?: string
+  dateOfJoining?: string
+  status?: string
+  totalLeaves?: number
 }
 
 interface AuthState {
@@ -49,7 +57,7 @@ export const loginAdmin = createAsyncThunk(
     { rejectWithValue }
   ) => {
     try {
-      // 1. Try to fetch from local JSON server for Admin login
+      // 1. Check local JSON server for Admin login
       const { data: adminData } = await axios.get(`${JSON_SERVER_URL}/admins`, {
         params: { username: credentials.username }
       })
@@ -75,38 +83,49 @@ export const loginAdmin = createAsyncThunk(
         }
       }
     } catch (err) {
-      // Ignore and fallback to dummyjson for employee login
-      console.warn('JSON server check failed, falling back to dummyjson:', err)
+      console.warn('JSON server admin check failed:', err)
     }
 
-    // 2. Fallback to dummyjson API for Employee login
+    // 2. Check local JSON server for Employee login (db.json /employees)
     try {
-      const { data } = await axios.post('https://dummyjson.com/auth/login', {
-        username: credentials.username,
-        password: credentials.password,
-        expiresInMins: 30,
-      }, {
-        headers: { 'Content-Type': 'application/json' }
+      const { data: employeeData } = await axios.get(`${JSON_SERVER_URL}/employees`, {
+        params: { username: credentials.username }
       })
 
-      const employee: Admin = {
-        id: data.id,
-        username: data.username,
-        email: data.email,
-        role: 'employee',
-        name: `${data.firstName} ${data.lastName}`,
-        token: data.accessToken || data.token,
-        refreshToken: data.refreshToken,
-        image: data.image
+      if (employeeData && employeeData.length > 0) {
+        const empRecord = employeeData[0]
+        if (empRecord.password === credentials.password) {
+          const employee: Admin = {
+            id: empRecord.id,
+            username: empRecord.username,
+            email: empRecord.email,
+            role: 'employee',
+            name: empRecord.fullName,
+            token: 'local-employee-token',
+            refreshToken: 'local-employee-refresh-token',
+            // Store full employee profile in auth state
+            empId: empRecord.empId,
+            phone: empRecord.phone,
+            department: empRecord.department,
+            designation: empRecord.designation,
+            dateOfJoining: empRecord.dateOfJoining,
+            status: empRecord.status,
+            totalLeaves: empRecord.totalLeaves,
+          }
+          if (typeof window !== 'undefined') {
+            localStorage.setItem('admin', JSON.stringify(employee))
+          }
+          return employee
+        } else {
+          return rejectWithValue('Invalid password.')
+        }
       }
 
-      if (typeof window !== 'undefined') {
-        localStorage.setItem('admin', JSON.stringify(employee))
-      }
-      return employee
+      // Employee not found in local db either
+      return rejectWithValue('Invalid credentials. User not found.')
     } catch (error: any) {
       if (error.response && error.response.data && error.response.data.message) {
-         return rejectWithValue(error.response.data.message)
+        return rejectWithValue(error.response.data.message)
       }
       return rejectWithValue('Invalid credentials or failed to connect.')
     }

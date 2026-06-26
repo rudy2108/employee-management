@@ -67,12 +67,12 @@ export default function EmployeeDashboard() {
   // If no match, fall back to the first employee for demo (totalLeaves default 12)
   const totalLeaves = myEmployee?.totalLeaves ?? 12
 
-  // --- Derived: my leave requests
+  // --- Derived: my leave requests (filter only the logged-in employee's leaves)
   const myLeaves = myEmployee
     ? leaveRequests.filter(
         (l) => String(l.employeeId) === String(myEmployee.id)
       )
-    : leaveRequests
+    : [] // No match → show empty rather than leaking all employees' data
 
   // Compute used/remaining per type
   const usedAnnual = myLeaves.filter(
@@ -94,8 +94,8 @@ export default function EmployeeDashboard() {
   ).length
 
   const annualTotal = totalLeaves
-  const sickTotal = 8
-  const personalTotal = 4
+  const sickTotal = myEmployee?.sickLeaves ?? 8
+  const personalTotal = myEmployee?.personalLeaves ?? 4
 
   const leaveTypes: LeaveTypeRow[] = [
     {
@@ -129,9 +129,15 @@ export default function EmployeeDashboard() {
     .sort((a, b) => b.appliedDate.localeCompare(a.appliedDate))
     .slice(0, 5)
 
-  // --- Derived: upcoming holidays
-  const upcomingHolidays = holidays
-    .filter(() => true) // all holidays shown, sorted by raw text date
+  // --- Derived: upcoming holidays — only future dates, sorted, up to 4
+  const today = now.toISOString().split('T')[0] // e.g. "2026-06-26"
+  const upcomingHolidays = [...holidays]
+    .filter((h) => {
+      // h.date is like "Aug 15, 2026"
+      const parsed = new Date(h.date)
+      return !isNaN(parsed.getTime()) && parsed.toISOString().split('T')[0] >= today
+    })
+    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
     .slice(0, 4)
 
   return (
