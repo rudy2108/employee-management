@@ -1,7 +1,7 @@
 import type { Employee, LeaveRequest } from "../../services/Api";
 import { computeLeaveDays } from "../../services/Api";
 import { useMemo } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { Button } from "../ui/Button";
 import {
   TableContainer,

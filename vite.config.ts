@@ -1,21 +1,21 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import tsconfigPaths from "vite-tsconfig-paths";
+import { reactRouter } from "@react-router/dev/vite";
 import tailwindcss from "@tailwindcss/vite";
 
 const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
-  plugins: [tailwindcss(), react(), tsconfigPaths()],
+  resolve: { tsconfigPaths: true },
+  plugins: [tailwindcss(), reactRouter()],
   build: {
     rollupOptions: {
       output: {
         // Split rarely-changing vendor code into stable chunks for better caching.
         manualChunks(id) {
           if (id.includes("node_modules")) {
-            if (/[\\/](react|react-dom|react-router-dom|react-router)[\\/]/.test(id)) {
+            if (/[\\/](react|react-dom|react-router)[\\/]/.test(id)) {
               return "react-vendor";
             }
             if (/[\\/](@reduxjs|react-redux|@tanstack)[\\/]/.test(id)) {

@@ -1,7 +1,7 @@
-import { Navigate, Outlet } from 'react-router-dom'
+import { Navigate, Outlet } from 'react-router'
 import { Suspense, useState } from 'react'
 import { useSelector } from 'react-redux'
-import type { RootState } from '../app/Store'
+import type { RootState } from '../Store'
 import Sidebar from '../components/layout/Sidebar'
 
 export default function ProtectedRoute() {

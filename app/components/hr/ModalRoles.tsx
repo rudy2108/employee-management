@@ -36,6 +36,7 @@ export default function ModalRoles({ isOpen, onClose, employees }: ModalRolesPro
             designation: employee.designation,
             dateOfJoining: employee.dateOfJoining,
             status: employee.status,
+            totalLeaves: employee.totalLeaves,
           })
         )
       )

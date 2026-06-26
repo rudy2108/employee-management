@@ -1,4 +1,4 @@
-import { useSearchParams } from 'react-router-dom'
+import { useSearchParams } from 'react-router'
 
 function Header(){
   const [searchParams, setSearchParams] = useSearchParams()

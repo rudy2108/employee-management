@@ -18,7 +18,19 @@ interface AuthState {
   error: string | null
 }
 
-const storedAdmin = localStorage.getItem('admin')
+const readStoredAdmin = () => {
+  if (typeof window === 'undefined') return null
+
+  return localStorage.getItem('admin')
+}
+
+const removeStoredAdmin = () => {
+  if (typeof window === 'undefined') return
+
+  localStorage.removeItem('admin')
+}
+
+const storedAdmin = readStoredAdmin()
 
 const initialState: AuthState = {
   admin: storedAdmin ? JSON.parse(storedAdmin) : null,
@@ -50,7 +62,9 @@ export const loginAdmin = createAsyncThunk(
 
       // Exclude the password from what we store
       const { password: _password, ...safeAdmin } = admin
-      localStorage.setItem('admin', JSON.stringify(safeAdmin))
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('admin', JSON.stringify(safeAdmin))
+      }
       return safeAdmin as Admin
     } catch {
       return rejectWithValue('Failed to connect to the server. Make sure JSON Server is running.')
@@ -61,7 +75,7 @@ export const loginAdmin = createAsyncThunk(
 export const logoutAdmin = createAsyncThunk(
   'auth/logoutAdmin',
   async () => {
-    localStorage.removeItem('admin')
+    removeStoredAdmin()
     return null
   }
 )
@@ -74,7 +88,7 @@ const authSlice = createSlice({
       state.admin = null
       state.isAuthenticated = false
       state.error = null
-      localStorage.removeItem('admin')
+      removeStoredAdmin()
     },
     clearError(state) {
       state.error = null

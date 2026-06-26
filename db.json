@@ -3,8 +3,8 @@
     {
       "id": "1",
       "username": "admin",
-      "email": "admin@company.com",
-      "password": "admin123",
+      "email": "rudysondagar@gmail.com",
+      "password": "Rudy1234",
       "role": "admin",
       "name": "Super Admin"
     }
@@ -15,12 +15,12 @@
       "empId": "0002",
       "email": "priya.patel@gmail.com",
       "phone": "9876543211",
-      "department": "design",
-      "designation": "UI/UX Designer",
+      "department": "engineering",
+      "designation": "DevOps Engineer",
       "dateOfJoining": "2026-06-02",
       "status": "probation",
-      "id": "emp002",
-      "totalLeaves": 12
+      "totalLeaves": 12,
+      "id": "emp002"
     },
     {
       "fullName": "Rohan Verma",
@@ -301,7 +301,7 @@
     },
     {
       "employeeId": "emp005",
-      "status": "pending",
+      "status": "approved",
       "type": "Regular Leave",
       "duration": "2026-06-29 to 2026-07-01",
       "appliedDate": "2026-06-24",
@@ -334,7 +334,7 @@
     },
     {
       "employeeId": "V8_I7R2bXLc",
-      "status": "pending",
+      "status": "approved",
       "type": "Immediate Leave",
       "duration": "1 day",
       "appliedDate": "2026-06-24",
@@ -460,6 +460,14 @@
       "lastUpdated": "Aug 15, 2023",
       "description": "Data privacy and information security policy",
       "effectiveDate": "2023-08-15"
+    },
+    {
+      "name": "Further Studies Policy",
+      "category": "General",
+      "description": "The employees who are willing to do master or want to do further studies which is fully funded by the company but due to recent performance this policy will stop",
+      "effectiveDate": "2026-07-01",
+      "lastUpdated": "Jun 24, 2026",
+      "id": "LkLgR8HMNTk"
     }
   ],
   "problems": [
@@ -467,7 +475,7 @@
       "ticketId": "TKT-1877",
       "employeeId": "emp003",
       "category": "Harassment",
-      "status": "open",
+      "status": "resolved",
       "priority": "high",
       "filedDate": "2026-06-24",
       "description": "I have been experiencing repeated inappropriate comments and disrespectful behavior from a colleague, creating an uncomfortable work environment. I request HR to investigate this matter confidentially",
@@ -477,7 +485,7 @@
       "ticketId": "TKT-3772",
       "employeeId": "emp015",
       "category": "Work Environment",
-      "status": "open",
+      "status": "resolved",
       "priority": "medium",
       "filedDate": "2026-06-24",
       "description": "My attendance for 15 June 2026 is marked as absent even though I was present and completed my full workday. Kindly verify and correct the attendance record",
@@ -487,7 +495,7 @@
       "ticketId": "TKT-5709",
       "employeeId": "emp019",
       "category": "Work Environment",
-      "status": "open",
+      "status": "resolved",
       "priority": "low",
       "filedDate": "2026-06-24",
       "description": "My leave balance was reduced incorrectly after submitting a leave request. The deduction does not match the number of approved leave days. Please review and update the records",
@@ -497,7 +505,7 @@
       "ticketId": "TKT-4008",
       "employeeId": "Tx0wqpoxmCI",
       "category": "Pay Dispute",
-      "status": "open",
+      "status": "resolved",
       "priority": "high",
       "filedDate": "2026-06-24",
       "description": "My salary for this month does not include the overtime hours I worked. I request a review of the payroll calculation and clarification regarding the missing amount.",

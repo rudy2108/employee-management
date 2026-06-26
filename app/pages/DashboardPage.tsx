@@ -1,14 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
-import { employeeAPI, leaveAPI, jobApplicationAPI, pageConfigAPI } from "../services/Api";
-import { cap } from "../lib/Utils";
-import DashboardStatCards from "../components/dashboard/DashboardStatCards";
-import RecentActivityCard from "../components/dashboard/RecentActivityCard";
-import OpenProblemsCard from "../components/dashboard/OpenProblemsCard";
 import BarChartCard, { type BarChartItem } from "../components/dashboard/BarChartCard";
-import StatusPipelineCard, { type StatTile, type MiniBarItem } from "../components/dashboard/StatusPipelineCard";
+import DashboardStatCards from "../components/dashboard/DashboardStatCards";
+import OpenProblemsCard from "../components/dashboard/OpenProblemsCard";
+import RecentActivityCard from "../components/dashboard/RecentActivityCard";
+import StatusPipelineCard, { type MiniBarItem, type StatTile } from "../components/dashboard/StatusPipelineCard";
 import UpcomingHolidaysCard from "../components/dashboard/UpcomingHolidaysCard";
 import { PageHeader } from "../components/ui/PageHeader";
+import { cap } from "../lib/Utils";
+import { employeeAPI, jobApplicationAPI, leaveAPI, pageConfigAPI } from "../services/Api";
 
 const DEPT_COLORS: Record<string, { bar: string; text: string }> = {
   engineering: { bar: "bg-primary", text: "text-primary" },

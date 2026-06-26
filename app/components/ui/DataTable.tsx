@@ -1,4 +1,5 @@
 import * as React from "react";
+/* eslint-disable react-refresh/only-export-components -- shared table primitives and variants are intentionally colocated */
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/Utils";
 
