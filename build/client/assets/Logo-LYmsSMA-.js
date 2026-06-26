@@ -1,0 +1,1 @@
+var e=`/assets/Logo-BA5IdZph.png`;export{e as t};

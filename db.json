@@ -300,28 +300,6 @@
       "id": "Pon_yIVHE2o"
     },
     {
-      "employeeId": "emp005",
-      "status": "approved",
-      "type": "Regular Leave",
-      "duration": "2026-06-29 to 2026-07-01",
-      "appliedDate": "2026-06-24",
-      "reason": "I am requesting leave for two days due to a high fever and doctor's recommendation for complete rest.",
-      "startDate": "2026-06-29",
-      "endDate": "2026-07-01",
-      "id": "c_xV_JPdcJ0"
-    },
-    {
-      "employeeId": "emp010",
-      "status": "approved",
-      "type": "Regular Leave",
-      "duration": "2026-06-30 to 2026-07-03",
-      "appliedDate": "2026-06-24",
-      "reason": "I need leave to attend a family function that requires my presence out of town.",
-      "startDate": "2026-06-30",
-      "endDate": "2026-07-03",
-      "id": "KtK7vyA5UNY"
-    },
-    {
       "employeeId": "emp015",
       "status": "hr_rejected",
       "type": "Immediate Leave",
@@ -331,17 +309,6 @@
       "startDate": "2026-07-06",
       "endDate": "2026-07-10",
       "id": "_B2zfg2DFxU"
-    },
-    {
-      "employeeId": "V8_I7R2bXLc",
-      "status": "approved",
-      "type": "Immediate Leave",
-      "duration": "1 day",
-      "appliedDate": "2026-06-24",
-      "reason": "I need leave to manage urgent household maintenance and repair work.",
-      "startDate": "2026-06-26",
-      "endDate": "2026-06-26",
-      "id": "Z6ecT0weIlg"
     }
   ],
   "holidays": [

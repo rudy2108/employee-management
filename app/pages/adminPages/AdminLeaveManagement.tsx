@@ -1,11 +1,11 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useMemo, useCallback, useState } from "react";
-import LeaveRequestsTable from "../components/leave/LeaveRequestsTable";
-import UpcomingApprovedLeaves from "../components/leave/UpcomingApprovedLeaves";
-import { Button } from "../components/ui/Button";
-import { PageHeader } from "../components/ui/PageHeader";
-import { StatCard, StatCardContent } from "../components/ui/StatCard";
-import { employeeAPI, leaveAPI, pageConfigAPI, pageStatAPI } from "../services/Api";
+import LeaveRequestsTable from "../../components/leave/LeaveRequestsTable";
+import UpcomingApprovedLeaves from "../../components/leave/UpcomingApprovedLeaves";
+import { Button } from "../../components/ui/Button";
+import { PageHeader } from "../../components/ui/PageHeader";
+import { StatCard, StatCardContent } from "../../components/ui/StatCard";
+import { employeeAPI, leaveAPI, pageConfigAPI, pageStatAPI } from "../../services/Api";
 
 type LeaveStatus = "pending" | "hr_approved" | "hr_rejected" | "approved" | "rejected";
 

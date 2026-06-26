@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
 import type { AppDispatch, RootState } from '../Store'
+import Logo from '../assets/Logo/Logo.png'
 import { Button } from '../components/ui/Button'
 import { clearError, loginAdmin } from '../features/auth/AuthSlice'
-import Logo from '../assets/Logo/Logo.png'
 
 
 const CURRENT_YEAR = new Date().getFullYear()
@@ -122,12 +122,7 @@ export default function LoginPage() {
                   >
                     Password
                   </label>
-                  <a
-                    className="text-[12px] leading-[16px] font-semibold font-label-sm text-primary hover:text-secondary transition-colors cursor-pointer"
-                    href="#"
-                  >
-                    Forgot password?
-                  </a>
+                 
                 </div>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-on-surface-variant">

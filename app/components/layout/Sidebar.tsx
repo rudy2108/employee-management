@@ -1,6 +1,6 @@
 import { Link, useLocation, useNavigate } from "react-router";
 import { useDispatch } from "react-redux";
-import type { AppDispatch } from "@/app/Store";
+import type { AppDispatch } from "@/Store";
 import { logoutAdmin } from "@/features/auth/AuthSlice";
 import logo from "@/assets/Logo/Logo.png";
 import roundLogo from "@/assets/Logo/RoundLogo.png";

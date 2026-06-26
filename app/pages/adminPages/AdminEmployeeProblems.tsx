@@ -1,14 +1,14 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useMemo, useCallback, useState } from "react";
-import LogProblem from "../components/problems/LogProblem";
-import ProblemsFiltersBar from "../components/problems/ProblemsFiltersBar";
-import ProblemsTable from "../components/problems/ProblemsTable";
-import ViewProblemModal from "../components/problems/ViewProblemModal";
-import { Button } from "../components/ui/Button";
-import { PageHeader } from "../components/ui/PageHeader";
-import { StatCard, StatCardContent } from "../components/ui/StatCard";
-import type { Employee, EmployeeProblem } from "../services/Api";
-import { employeeAPI, pageConfigAPI, pageStatAPI, problemAPI } from "../services/Api";
+import LogProblem from "../../components/problems/LogProblem";
+import ProblemsFiltersBar from "../../components/problems/ProblemsFiltersBar";
+import ProblemsTable from "../../components/problems/ProblemsTable";
+import ViewProblemModal from "../../components/problems/ViewProblemModal";
+import { Button } from "../../components/ui/Button";
+import { PageHeader } from "../../components/ui/PageHeader";
+import { StatCard, StatCardContent } from "../../components/ui/StatCard";
+import type { Employee, EmployeeProblem } from "../../services/Api";
+import { employeeAPI, pageConfigAPI, pageStatAPI, problemAPI } from "../../services/Api";
 
 type ProblemStatus = "open" | "in_progress" | "resolved";
 
