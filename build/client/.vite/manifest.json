@@ -1,0 +1,306 @@
+{
+  "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/app/assets/Logo/Logo.png": {
+    "file": "assets/Logo-BA5IdZph.png",
+    "src": "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/app/assets/Logo/Logo.png"
+  },
+  "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/app/assets/Logo/RoundLogo.png": {
+    "file": "assets/RoundLogo-BXz5n44_.png",
+    "src": "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/app/assets/Logo/RoundLogo.png"
+  },
+  "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/app/components/employee-management/AddEmployee.tsx?__react-router-build-client-route": {
+    "file": "assets/AddEmployee-D0n4bPo1.js",
+    "name": "AddEmployee",
+    "src": "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/app/components/employee-management/AddEmployee.tsx?__react-router-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_rolldown-runtime-QTnfLwEv.js",
+      "_react-vendor-CMMsSUZe.js",
+      "_Button-DWWPFzvH.js",
+      "_Api-73E7Rm1L.js",
+      "_data-vendor-C1KKCUJN.js"
+    ]
+  },
+  "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/app/components/employee-management/EditEmployee.tsx?__react-router-build-client-route": {
+    "file": "assets/EditEmployee-BCUr8McP.js",
+    "name": "EditEmployee",
+    "src": "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/app/components/employee-management/EditEmployee.tsx?__react-router-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_rolldown-runtime-QTnfLwEv.js",
+      "_react-vendor-CMMsSUZe.js",
+      "_Header-DG3rd8Rc.js",
+      "_Button-DWWPFzvH.js",
+      "_PageHeader-DshkwqHW.js",
+      "_Api-73E7Rm1L.js",
+      "_data-vendor-C1KKCUJN.js"
+    ]
+  },
+  "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/app/entry.client.tsx": {
+    "file": "assets/entry.client-Dq5LCs9l.js",
+    "name": "entry.client",
+    "src": "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/app/entry.client.tsx",
+    "isEntry": true,
+    "imports": [
+      "_rolldown-runtime-QTnfLwEv.js",
+      "_react-vendor-CMMsSUZe.js",
+      "_data-vendor-C1KKCUJN.js"
+    ]
+  },
+  "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/app/pages/LoginPage.tsx?__react-router-build-client-route": {
+    "file": "assets/LoginPage-7w9F4Jl2.js",
+    "name": "LoginPage",
+    "src": "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/app/pages/LoginPage.tsx?__react-router-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_rolldown-runtime-QTnfLwEv.js",
+      "_react-vendor-CMMsSUZe.js",
+      "_Logo-LYmsSMA-.js",
+      "_Button-DWWPFzvH.js",
+      "_AuthSlice-UZySnzza.js",
+      "_data-vendor-C1KKCUJN.js"
+    ]
+  },
+  "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/app/pages/ProtectedRoute.tsx?__react-router-build-client-route": {
+    "file": "assets/ProtectedRoute-BUDBY9A0.js",
+    "name": "ProtectedRoute",
+    "src": "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/app/pages/ProtectedRoute.tsx?__react-router-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_rolldown-runtime-QTnfLwEv.js",
+      "_react-vendor-CMMsSUZe.js",
+      "_Logo-LYmsSMA-.js",
+      "_AuthSlice-UZySnzza.js",
+      "_data-vendor-C1KKCUJN.js"
+    ],
+    "assets": [
+      "assets/RoundLogo-BXz5n44_.png",
+      "assets/Logo-BA5IdZph.png"
+    ]
+  },
+  "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/app/pages/RedirectToLogin.tsx?__react-router-build-client-route": {
+    "file": "assets/RedirectToLogin-DPNcabL_.js",
+    "name": "RedirectToLogin",
+    "src": "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/app/pages/RedirectToLogin.tsx?__react-router-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_react-vendor-CMMsSUZe.js",
+      "_data-vendor-C1KKCUJN.js"
+    ]
+  },
+  "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/app/pages/adminPages/AdminDashboard.tsx?__react-router-build-client-route": {
+    "file": "assets/AdminDashboard-CU3vDMQC.js",
+    "name": "AdminDashboard",
+    "src": "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/app/pages/adminPages/AdminDashboard.tsx?__react-router-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_rolldown-runtime-QTnfLwEv.js",
+      "_PageHeader-DshkwqHW.js",
+      "_StatCard-B9SDqYkw.js",
+      "_Utils-CJeVUj9u.js",
+      "_Api-73E7Rm1L.js",
+      "_data-vendor-C1KKCUJN.js"
+    ]
+  },
+  "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/app/pages/adminPages/AdminEmployeeManagement.tsx?__react-router-build-client-route": {
+    "file": "assets/AdminEmployeeManagement-BiYhzFVp.js",
+    "name": "AdminEmployeeManagement",
+    "src": "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/app/pages/adminPages/AdminEmployeeManagement.tsx?__react-router-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_rolldown-runtime-QTnfLwEv.js",
+      "_react-vendor-CMMsSUZe.js",
+      "_Header-DG3rd8Rc.js",
+      "_Button-DWWPFzvH.js",
+      "_DataTable-GxsT4zvQ.js",
+      "_PageHeader-DshkwqHW.js",
+      "_StatCard-B9SDqYkw.js",
+      "_Api-73E7Rm1L.js",
+      "_data-vendor-C1KKCUJN.js"
+    ]
+  },
+  "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/app/pages/adminPages/AdminEmployeeProblems.tsx?__react-router-build-client-route": {
+    "file": "assets/AdminEmployeeProblems-MdDG59ZP.js",
+    "name": "AdminEmployeeProblems",
+    "src": "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/app/pages/adminPages/AdminEmployeeProblems.tsx?__react-router-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_rolldown-runtime-QTnfLwEv.js",
+      "_Button-DWWPFzvH.js",
+      "_DataTable-GxsT4zvQ.js",
+      "_PageHeader-DshkwqHW.js",
+      "_StatCard-B9SDqYkw.js",
+      "_Api-73E7Rm1L.js",
+      "_data-vendor-C1KKCUJN.js"
+    ]
+  },
+  "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/app/pages/adminPages/AdminHrAdministration.tsx?__react-router-build-client-route": {
+    "file": "assets/AdminHrAdministration-BWeqCOzn.js",
+    "name": "AdminHrAdministration",
+    "src": "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/app/pages/adminPages/AdminHrAdministration.tsx?__react-router-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_rolldown-runtime-QTnfLwEv.js",
+      "_Button-DWWPFzvH.js",
+      "_DataTable-GxsT4zvQ.js",
+      "_PageHeader-DshkwqHW.js",
+      "_StatCard-B9SDqYkw.js",
+      "_Utils-CJeVUj9u.js",
+      "_Api-73E7Rm1L.js",
+      "_data-vendor-C1KKCUJN.js"
+    ]
+  },
+  "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/app/pages/adminPages/AdminLeaveManagement.tsx?__react-router-build-client-route": {
+    "file": "assets/AdminLeaveManagement-CF0NIOKk.js",
+    "name": "AdminLeaveManagement",
+    "src": "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/app/pages/adminPages/AdminLeaveManagement.tsx?__react-router-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_rolldown-runtime-QTnfLwEv.js",
+      "_Button-DWWPFzvH.js",
+      "_DataTable-GxsT4zvQ.js",
+      "_PageHeader-DshkwqHW.js",
+      "_StatCard-B9SDqYkw.js",
+      "_Api-73E7Rm1L.js",
+      "_data-vendor-C1KKCUJN.js"
+    ]
+  },
+  "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/app/root.tsx?__react-router-build-client-route": {
+    "file": "assets/root-CiSwwPhA.js",
+    "name": "root",
+    "src": "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/app/root.tsx?__react-router-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_react-vendor-CMMsSUZe.js",
+      "_AuthSlice-UZySnzza.js",
+      "_data-vendor-C1KKCUJN.js"
+    ],
+    "css": [
+      "assets/root-B_iADFyK.css"
+    ],
+    "assets": [
+      "assets/geist-cyrillic-ext-wght-normal-DjL33-gN.woff2",
+      "assets/geist-cyrillic-wght-normal-BEAKL7Jp.woff2",
+      "assets/geist-vietnamese-wght-normal-6IgcOCM7.woff2",
+      "assets/geist-latin-ext-wght-normal-DC-KSUi6.woff2",
+      "assets/geist-latin-wght-normal-BgDaEnEv.woff2"
+    ]
+  },
+  "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/node_modules/@fontsource-variable/geist/files/geist-cyrillic-ext-wght-normal.woff2": {
+    "file": "assets/geist-cyrillic-ext-wght-normal-DjL33-gN.woff2",
+    "src": "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/node_modules/@fontsource-variable/geist/files/geist-cyrillic-ext-wght-normal.woff2"
+  },
+  "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/node_modules/@fontsource-variable/geist/files/geist-cyrillic-wght-normal.woff2": {
+    "file": "assets/geist-cyrillic-wght-normal-BEAKL7Jp.woff2",
+    "src": "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/node_modules/@fontsource-variable/geist/files/geist-cyrillic-wght-normal.woff2"
+  },
+  "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/node_modules/@fontsource-variable/geist/files/geist-latin-ext-wght-normal.woff2": {
+    "file": "assets/geist-latin-ext-wght-normal-DC-KSUi6.woff2",
+    "src": "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/node_modules/@fontsource-variable/geist/files/geist-latin-ext-wght-normal.woff2"
+  },
+  "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/node_modules/@fontsource-variable/geist/files/geist-latin-wght-normal.woff2": {
+    "file": "assets/geist-latin-wght-normal-BgDaEnEv.woff2",
+    "src": "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/node_modules/@fontsource-variable/geist/files/geist-latin-wght-normal.woff2"
+  },
+  "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/node_modules/@fontsource-variable/geist/files/geist-vietnamese-wght-normal.woff2": {
+    "file": "assets/geist-vietnamese-wght-normal-6IgcOCM7.woff2",
+    "src": "../../../../../Rudra/OneDrive/Desktop/Employee_Management(Tanstack-Cerebulb)/employee-management/node_modules/@fontsource-variable/geist/files/geist-vietnamese-wght-normal.woff2"
+  },
+  "_Api-73E7Rm1L.js": {
+    "file": "assets/Api-73E7Rm1L.js",
+    "name": "Api",
+    "imports": [
+      "_axios-Dw4Db77z.js"
+    ]
+  },
+  "_AuthSlice-UZySnzza.js": {
+    "file": "assets/AuthSlice-UZySnzza.js",
+    "name": "AuthSlice",
+    "imports": [
+      "_data-vendor-C1KKCUJN.js",
+      "_axios-Dw4Db77z.js"
+    ]
+  },
+  "_Button-DWWPFzvH.js": {
+    "file": "assets/Button-DWWPFzvH.js",
+    "name": "Button",
+    "imports": [
+      "_rolldown-runtime-QTnfLwEv.js",
+      "_Utils-CJeVUj9u.js",
+      "_data-vendor-C1KKCUJN.js"
+    ]
+  },
+  "_DataTable-GxsT4zvQ.js": {
+    "file": "assets/DataTable-GxsT4zvQ.js",
+    "name": "DataTable",
+    "imports": [
+      "_rolldown-runtime-QTnfLwEv.js",
+      "_Utils-CJeVUj9u.js",
+      "_data-vendor-C1KKCUJN.js"
+    ]
+  },
+  "_Header-DG3rd8Rc.js": {
+    "file": "assets/Header-DG3rd8Rc.js",
+    "name": "Header",
+    "imports": [
+      "_react-vendor-CMMsSUZe.js",
+      "_data-vendor-C1KKCUJN.js"
+    ]
+  },
+  "_Logo-LYmsSMA-.js": {
+    "file": "assets/Logo-LYmsSMA-.js",
+    "name": "Logo",
+    "assets": [
+      "assets/Logo-BA5IdZph.png"
+    ]
+  },
+  "_PageHeader-DshkwqHW.js": {
+    "file": "assets/PageHeader-DshkwqHW.js",
+    "name": "PageHeader",
+    "imports": [
+      "_data-vendor-C1KKCUJN.js"
+    ]
+  },
+  "_StatCard-B9SDqYkw.js": {
+    "file": "assets/StatCard-B9SDqYkw.js",
+    "name": "StatCard",
+    "imports": [
+      "_rolldown-runtime-QTnfLwEv.js",
+      "_Utils-CJeVUj9u.js",
+      "_data-vendor-C1KKCUJN.js"
+    ]
+  },
+  "_Utils-CJeVUj9u.js": {
+    "file": "assets/Utils-CJeVUj9u.js",
+    "name": "Utils",
+    "imports": [
+      "_rolldown-runtime-QTnfLwEv.js",
+      "_data-vendor-C1KKCUJN.js"
+    ]
+  },
+  "_axios-Dw4Db77z.js": {
+    "file": "assets/axios-Dw4Db77z.js",
+    "name": "axios",
+    "imports": [
+      "_rolldown-runtime-QTnfLwEv.js"
+    ]
+  },
+  "_data-vendor-C1KKCUJN.js": {
+    "file": "assets/data-vendor-C1KKCUJN.js",
+    "name": "data-vendor",
+    "imports": [
+      "_rolldown-runtime-QTnfLwEv.js"
+    ]
+  },
+  "_react-vendor-CMMsSUZe.js": {
+    "file": "assets/react-vendor-CMMsSUZe.js",
+    "name": "react-vendor",
+    "imports": [
+      "_rolldown-runtime-QTnfLwEv.js",
+      "_data-vendor-C1KKCUJN.js"
+    ]
+  },
+  "_rolldown-runtime-QTnfLwEv.js": {
+    "file": "assets/rolldown-runtime-QTnfLwEv.js",
+    "name": "rolldown-runtime"
+  }
+}

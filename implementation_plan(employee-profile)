@@ -1,0 +1,52 @@
+# Implementation Plan: Employee Profile Page
+
+This plan details the creation of the Employee Profile/Details page based on the provided HTML template, following a component-based architecture.
+
+## Proposed Changes
+
+We will create a set of reusable UI components specific to the employee profile to ensure the code remains clean, modular, and easy to maintain. We will then assemble these components in the `EmployeeProfile.tsx` page.
+
+### Employee Profile Components
+
+We will create a new directory for these specific components: `app/components/employee-management/profile/`.
+
+#### [NEW] `ProfileHeader.tsx`
+- **Purpose**: Displays the top section with the employee's profile picture, name, designation, department/status tags, and action buttons (Edit, Delete).
+- **Location**: `app/components/employee-management/profile/ProfileHeader.tsx`
+
+#### [NEW] `PersonalInfoCard.tsx`
+- **Purpose**: A card component to display personal information like Date of Birth and Gender.
+- **Location**: `app/components/employee-management/profile/PersonalInfoCard.tsx`
+
+#### [NEW] `ContactInfoCard.tsx`
+- **Purpose**: A card component to display contact details like Email Address and Phone Number.
+- **Location**: `app/components/employee-management/profile/ContactInfoCard.tsx`
+
+#### [NEW] `EmploymentDetailsCard.tsx`
+- **Purpose**: A card component to display employment-specific details like Department, Designation, and Date of Joining.
+- **Location**: `app/components/employee-management/profile/EmploymentDetailsCard.tsx`
+
+#### [NEW] `LeaveSummaryCard.tsx`
+- **Purpose**: A card component to display leave metrics (Leaves Taken, Leave Balance).
+- **Location**: `app/components/employee-management/profile/LeaveSummaryCard.tsx`
+
+### Main Page Assembly
+
+#### [MODIFY] `EmployeeProfile.tsx`
+- **Location**: `app/pages/employeePages/EmployeeProfile.tsx`
+- **Changes**: 
+  - We will implement the main page layout, including the layout container, `Header`, and `Sidebar` (or adapt it to the existing routing Layout if there is one).
+  - Add the breadcrumb navigation (`Employee Management > Employee Details`).
+  - Assemble the page using the newly created components (`ProfileHeader`, `PersonalInfoCard`, `ContactInfoCard`, `EmploymentDetailsCard`, `LeaveSummaryCard`) organized in a responsive grid as per the HTML template.
+
+## Open Questions
+
+> [!IMPORTANT]
+> **Layout Wrapping**: Does your application use a specific Layout component for wrapping pages with the `Sidebar` and `Header` (e.g., via React Router `Outlet`), or should I import and render `Sidebar` and `Header` directly inside `EmployeeProfile.tsx`? For now, the plan is to assemble the content, and if a Layout component exists, I will render the content inside it.
+
+## Verification Plan
+
+### Manual Verification
+- Review the `EmployeeProfile.tsx` page locally to ensure the UI exactly matches the provided HTML design template, paying attention to colors, shadows, and spacing.
+- Ensure the layout is responsive across desktop and mobile views.
+- Verify that the separation into components allows for easy passing of props (mock data will be used initially, ready to be replaced with real backend data).

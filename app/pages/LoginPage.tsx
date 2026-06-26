@@ -12,23 +12,27 @@ const CURRENT_YEAR = new Date().getFullYear()
 export default function LoginPage() {
   const navigate = useNavigate()
   const dispatch = useDispatch<AppDispatch>()
-  const { loading, error, isAuthenticated } = useSelector((s: RootState) => s.auth)
+  const { loading, error, isAuthenticated, admin } = useSelector((s: RootState) => s.auth)
 
-  const [email, setEmail] = useState('')
+  const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
   const [rememberMe, setRememberMe] = useState(false)
-  const [emailFocused, setEmailFocused] = useState(false)
+  const [usernameFocused, setUsernameFocused] = useState(false)
   const [passwordFocused, setPasswordFocused] = useState(false)
 
   useEffect(() => {
     if (isAuthenticated) {
-      navigate('/dashboard', { replace: true })
+      if (admin?.role === 'admin') {
+        navigate('/dashboard', { replace: true })
+      } else {
+        navigate('/employee-dashboard', { replace: true })
+      }
     }
-  }, [isAuthenticated, navigate])
+  }, [isAuthenticated, admin, navigate])
 
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value)
+  const handleUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setUsername(e.target.value)
     if (error) dispatch(clearError())
   }
 
@@ -39,8 +43,8 @@ export default function LoginPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    if (!email || !password) return
-    dispatch(loginAdmin({ email, password }))
+    if (!username || !password) return
+    dispatch(loginAdmin({ username, password }))
   }
 
   const iconBase = "material-symbols-outlined text-[20px]"
@@ -81,34 +85,34 @@ export default function LoginPage() {
 
             {/* Form */}
             <form onSubmit={handleSubmit} className="space-y-4" noValidate>
-              {/* Email Input */}
+              {/* Username Input */}
               <div className="space-y-1.5">
                 <label
                   className="block text-[13px] leading-[18px] tracking-[0.01em] font-semibold font-label-md text-on-surface"
-                  htmlFor="login-email"
+                  htmlFor="login-username"
                 >
-                  Work Email
+                  Username
                 </label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-on-surface-variant">
                     <span
-                      className={emailFocused ? iconFocusedClass : iconUnfocusedClass}
-                      style={emailFocused ? focusedStyle : unfocusedStyle}
+                      className={usernameFocused ? iconFocusedClass : iconUnfocusedClass}
+                      style={usernameFocused ? focusedStyle : unfocusedStyle}
                     >
-                      mail
+                      person
                     </span>
                   </div>
                   <input
                     className="block w-full pl-9 pr-3 py-1.5 border border-outline-variant rounded-lg bg-surface text-on-surface text-[14px] leading-[20px] font-body-md placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all"
-                    id="login-email"
-                    name="email"
-                    placeholder="name@company.com"
+                    id="login-username"
+                    name="username"
+                    placeholder="Enter your username"
                     required
-                    type="email"
-                    value={email}
-                    onChange={handleEmailChange}
-                    onFocus={() => setEmailFocused(true)}
-                    onBlur={() => setEmailFocused(false)}
+                    type="text"
+                    value={username}
+                    onChange={handleUsernameChange}
+                    onFocus={() => setUsernameFocused(true)}
+                    onBlur={() => setUsernameFocused(false)}
                   />
                 </div>
               </div>

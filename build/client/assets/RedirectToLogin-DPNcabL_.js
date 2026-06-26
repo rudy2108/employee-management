@@ -1,0 +1,1 @@
+import{p as e}from"./data-vendor-C1KKCUJN.js";import{a as t}from"./react-vendor-CMMsSUZe.js";var n=e();function r(){return(0,n.jsx)(t,{to:`/login`,replace:!0})}export{r as default};

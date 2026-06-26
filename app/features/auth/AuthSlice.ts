@@ -9,6 +9,9 @@ export interface Admin {
   email: string
   role: string
   name: string
+  token?: string
+  refreshToken?: string
+  image?: string
 }
 
 interface AuthState {
@@ -42,32 +45,70 @@ const initialState: AuthState = {
 export const loginAdmin = createAsyncThunk(
   'auth/loginAdmin',
   async (
-    credentials: { email: string; password: string },
+    credentials: { username: string; password: string },
     { rejectWithValue }
   ) => {
     try {
-      const { data } = await axios.get(`${JSON_SERVER_URL}/admins`, {
-        params: { email: credentials.email },
+      // 1. Try to fetch from local JSON server for Admin login
+      const { data: adminData } = await axios.get(`${JSON_SERVER_URL}/admins`, {
+        params: { username: credentials.username }
       })
 
-      if (!data || data.length === 0) {
-        return rejectWithValue('No admin found with this email.')
+      if (adminData && adminData.length > 0) {
+        const adminRecord = adminData[0]
+        if (adminRecord.password === credentials.password) {
+          const admin: Admin = {
+            id: adminRecord.id,
+            username: adminRecord.username,
+            email: adminRecord.email,
+            role: 'admin',
+            name: adminRecord.name,
+            token: 'local-admin-token',
+            refreshToken: 'local-admin-refresh-token'
+          }
+          if (typeof window !== 'undefined') {
+            localStorage.setItem('admin', JSON.stringify(admin))
+          }
+          return admin
+        } else {
+          return rejectWithValue('Invalid password.')
+        }
+      }
+    } catch (err) {
+      // Ignore and fallback to dummyjson for employee login
+      console.warn('JSON server check failed, falling back to dummyjson:', err)
+    }
+
+    // 2. Fallback to dummyjson API for Employee login
+    try {
+      const { data } = await axios.post('https://dummyjson.com/auth/login', {
+        username: credentials.username,
+        password: credentials.password,
+        expiresInMins: 30,
+      }, {
+        headers: { 'Content-Type': 'application/json' }
+      })
+
+      const employee: Admin = {
+        id: data.id,
+        username: data.username,
+        email: data.email,
+        role: 'employee',
+        name: `${data.firstName} ${data.lastName}`,
+        token: data.accessToken || data.token,
+        refreshToken: data.refreshToken,
+        image: data.image
       }
 
-      const admin = data[0]
-
-      if (admin.password !== credentials.password) {
-        return rejectWithValue('Invalid password.')
-      }
-
-      // Exclude the password from what we store
-      const { password: _password, ...safeAdmin } = admin
       if (typeof window !== 'undefined') {
-        localStorage.setItem('admin', JSON.stringify(safeAdmin))
+        localStorage.setItem('admin', JSON.stringify(employee))
       }
-      return safeAdmin as Admin
-    } catch {
-      return rejectWithValue('Failed to connect to the server. Make sure JSON Server is running.')
+      return employee
+    } catch (error: any) {
+      if (error.response && error.response.data && error.response.data.message) {
+         return rejectWithValue(error.response.data.message)
+      }
+      return rejectWithValue('Invalid credentials or failed to connect.')
     }
   }
 )

@@ -1,1 +1,0 @@
-import{p as e}from"./data-vendor-C1KKCUJN.js";import{a as t,p as n}from"./react-vendor-e-FeAfv3.js";var r=e(),i=n(function(){return(0,r.jsx)(t,{to:`/login`,replace:!0})});export{i as default};

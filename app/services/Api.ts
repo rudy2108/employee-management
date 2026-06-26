@@ -22,6 +22,68 @@ const apiClient = axios.create({
   },
 })
 
+// Request interceptor to attach access token
+apiClient.interceptors.request.use(
+  (config) => {
+    if (typeof window !== 'undefined') {
+      const storedAdmin = localStorage.getItem('admin')
+      if (storedAdmin) {
+        const admin = JSON.parse(storedAdmin)
+        if (admin.token) {
+          config.headers.Authorization = `Bearer ${admin.token}`
+        }
+      }
+    }
+    return config
+  },
+  (error) => Promise.reject(error)
+)
+
+// Response interceptor to handle token refresh
+apiClient.interceptors.response.use(
+  (response) => response,
+  async (error) => {
+    const originalRequest = error.config
+
+    if (error.response?.status === 401 && !originalRequest._retry) {
+      originalRequest._retry = true
+
+      if (typeof window !== 'undefined') {
+        const storedAdmin = localStorage.getItem('admin')
+        if (storedAdmin) {
+          const admin = JSON.parse(storedAdmin)
+
+          if (admin.refreshToken) {
+            try {
+              const { data } = await axios.post('https://dummyjson.com/auth/refresh', {
+                refreshToken: admin.refreshToken,
+                expiresInMins: 30,
+              })
+
+              const updatedAdmin = {
+                ...admin,
+                token: data.accessToken || data.token,
+                refreshToken: data.refreshToken,
+              }
+              localStorage.setItem('admin', JSON.stringify(updatedAdmin))
+
+              originalRequest.headers.Authorization = `Bearer ${updatedAdmin.token}`
+              return apiClient(originalRequest)
+            } catch (refreshError) {
+              // Refresh failed, clear session
+              localStorage.removeItem('admin')
+              window.location.href = '/' // Redirect to login
+              return Promise.reject(refreshError)
+            }
+          }
+        }
+      }
+    }
+
+    return Promise.reject(error)
+  }
+)
+
 export const employeeAPI = {
   fetchAll: async (): Promise<Employee[]> => {
     const response = await apiClient.get('/employees')
