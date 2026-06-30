@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios, { type AxiosError, type AxiosHeaders, type InternalAxiosRequestConfig } from 'axios'
 
 export interface Employee {
   id: string | number
@@ -15,7 +15,14 @@ export interface Employee {
   personalLeaves?: number
 }
 
+interface AdminSession {
+  token?: string
+  refreshToken?: string
+  [key: string]: unknown
+}
+
 const API_BASE_URL = 'http://localhost:3000' // json-server runs on port 3000
+const REFRESH_ENDPOINT = 'https://dummyjson.com/auth/refresh'
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
@@ -24,65 +31,99 @@ const apiClient = axios.create({
   },
 })
 
+const getAdminSession = (): AdminSession | null => {
+  if (typeof window === 'undefined') return null
+
+  try {
+    const storedAdmin = localStorage.getItem('admin')
+    return storedAdmin ? (JSON.parse(storedAdmin) as AdminSession) : null
+  } catch {
+    return null
+  }
+}
+
+const saveAdminSession = (session: AdminSession): void => {
+  if (typeof window === 'undefined') return
+  localStorage.setItem('admin', JSON.stringify(session))
+}
+
+const attachAuthHeader = (config: InternalAxiosRequestConfig): InternalAxiosRequestConfig => {
+  const admin = getAdminSession()
+  if (!admin?.token) return config
+
+  const headers = config.headers ? (config.headers as AxiosHeaders).toJSON?.() ?? config.headers : {}
+  config.headers = {
+    ...headers,
+    Authorization: `Bearer ${admin.token}`,
+  } as unknown as AxiosHeaders
+
+  return config
+}
+
+const refreshAuthToken = async (refreshToken: string) => {
+  const { data } = await axios.post(REFRESH_ENDPOINT, {
+    refreshToken,
+    expiresInMins: 1,
+  })
+  return data
+}
+
+const redirectToLogin = (): void => {
+  if (typeof window !== 'undefined') {
+    localStorage.removeItem('admin')
+    window.location.assign('/')
+  }
+}
+
 // Request interceptor to attach access token
 apiClient.interceptors.request.use(
-  (config) => {
-    if (typeof window !== 'undefined') {
-      const storedAdmin = localStorage.getItem('admin')
-      if (storedAdmin) {
-        const admin = JSON.parse(storedAdmin)
-        if (admin.token) {
-          config.headers.Authorization = `Bearer ${admin.token}`
-        }
-      }
-    }
-    return config
-  },
-  (error) => Promise.reject(error)
+  attachAuthHeader,
+  (error) => Promise.reject(error),
 )
 
 // Response interceptor to handle token refresh
 apiClient.interceptors.response.use(
   (response) => response,
-  async (error) => {
-    const originalRequest = error.config
-
-    if (error.response?.status === 401 && !originalRequest._retry) {
-      originalRequest._retry = true
-
-      if (typeof window !== 'undefined') {
-        const storedAdmin = localStorage.getItem('admin')
-        if (storedAdmin) {
-          const admin = JSON.parse(storedAdmin)
-
-          if (admin.refreshToken) {
-            try {
-              const { data } = await axios.post('https://dummyjson.com/auth/refresh', {
-                refreshToken: admin.refreshToken,
-                expiresInMins: 1,
-              })
-
-              const updatedAdmin = {
-                ...admin,
-                token: data.accessToken || data.token,
-                refreshToken: data.refreshToken,
-              }
-              localStorage.setItem('admin', JSON.stringify(updatedAdmin))
-
-              originalRequest.headers.Authorization = `Bearer ${updatedAdmin.token}`
-              return apiClient(originalRequest)
-            } catch (refreshError) {
-              // Refresh failed, clear session
-              localStorage.removeItem('admin')
-              window.location.href = '/' // Redirect to login
-              return Promise.reject(refreshError)
-            }
-          }
-        }
-      }
+  async (error: AxiosError) => {
+    const originalRequest = error.config as InternalAxiosRequestConfig & {
+      _retry?: boolean
     }
 
-    return Promise.reject(error)
+    if (error.response?.status !== 401 || originalRequest._retry) {
+      return Promise.reject(error)
+    }
+
+    originalRequest._retry = true
+    const admin = getAdminSession()
+
+    if (!admin?.refreshToken) {
+      redirectToLogin()
+      return Promise.reject(error)
+    }
+
+    try {
+      const data = await refreshAuthToken(admin.refreshToken)
+      const updatedAdmin: AdminSession = {
+        ...admin,
+        token: data.accessToken || data.token,
+        refreshToken: data.refreshToken,
+      }
+      saveAdminSession(updatedAdmin)
+
+      const headers = originalRequest.headers
+        ? (originalRequest.headers as AxiosHeaders).toJSON?.() ?? originalRequest.headers
+        : {}
+
+      originalRequest.headers = {
+        ...headers,
+        Authorization: `Bearer ${updatedAdmin.token}`,
+      } as unknown as AxiosHeaders
+
+      return apiClient(originalRequest)
+    } catch (refreshError) {
+      redirectToLogin()
+      return Promise.reject(refreshError)
+    }
   }
 )
 
@@ -412,7 +453,14 @@ export const ticketCategoryAPI = {
 
 export function computeLeaveDays(startDate?: string, endDate?: string): number {
   if (!startDate || !endDate) return 1
+
   const start = new Date(startDate)
   const end = new Date(endDate)
-  return Math.max(1, Math.round((end.getTime() - start.getTime()) / 86400000) + 1)
+  if (Number.isNaN(start.getTime()) || Number.isNaN(end.getTime()) || end < start) {
+    return 1
+  }
+
+  const utcStart = Date.UTC(start.getFullYear(), start.getMonth(), start.getDate())
+  const utcEnd = Date.UTC(end.getFullYear(), end.getMonth(), end.getDate())
+  return Math.floor((utcEnd - utcStart) / 86400000) + 1
 }
