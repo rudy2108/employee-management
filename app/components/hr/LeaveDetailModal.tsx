@@ -1,20 +1,5 @@
+import type { LeaveRequestWithEmployee } from '../../services/Api';
 import { Button } from '../ui/Button';
-
-interface Employee {
-  id: string | number;
-  fullName: string;
-  department: string;
-  totalLeaves: number;
-}
-
-export interface LeaveRequestWithEmployee {
-  id: string | number;
-  type: string;
-  duration: string;
-  appliedDate: string;
-  reason?: string;
-  employee: Employee;
-}
 
 interface LeaveDetailModalProps {
   isOpen: boolean;

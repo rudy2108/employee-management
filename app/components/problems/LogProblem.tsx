@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { optionsAPI, problemAPI } from '../../services/Api'
 import type { EmployeeProblem, Employee } from '../../services/Api'
@@ -8,19 +8,26 @@ interface LogProblemProps {
   isOpen: boolean
   onClose: () => void
   employees: Employee[]
+  defaultEmployeeId?: string | number
 }
 
-export default function LogProblem({ isOpen, onClose, employees }: LogProblemProps) {
+export default function LogProblem({ isOpen, onClose, employees, defaultEmployeeId }: LogProblemProps) {
   const queryClient = useQueryClient()
   const { data: problemCategories = [] } = useQuery({ queryKey: ['problemCategories'], queryFn: optionsAPI.fetchProblemCategories })
   const { data: problemPriorities = [] } = useQuery({ queryKey: ['problemPriorities'], queryFn: optionsAPI.fetchProblemPriorities })
   const [selectedPriority, setSelectedPriority] = useState<'low' | 'medium' | 'high' | 'critical'>('high')
   const [formData, setFormData] = useState({
-    employeeId: '',
+    employeeId: defaultEmployeeId ? String(defaultEmployeeId) : '',
     category: '',
     incidentDate: '',
     description: '',
   })
+
+  useEffect(() => {
+    if (defaultEmployeeId != null && defaultEmployeeId !== '') {
+      setFormData((prev) => ({ ...prev, employeeId: prev.employeeId || String(defaultEmployeeId) }))
+    }
+  }, [defaultEmployeeId])
 
   const createMutation = useMutation({
     mutationFn: (data: Omit<EmployeeProblem, 'id'>) => problemAPI.create(data),
@@ -98,7 +105,8 @@ export default function LogProblem({ isOpen, onClose, employees }: LogProblemPro
                   name="employeeId"
                   value={formData.employeeId}
                   onChange={handleInputChange}
-                  className="w-full h-10 pl-10 pr-4 bg-surface-container-lowest border border-outline-variant rounded-xl focus:border-primary focus:ring-2 focus:ring-primary transition-all text-body-md outline-none appearance-none"
+                  disabled={Boolean(defaultEmployeeId)}
+                  className="w-full h-10 pl-10 pr-4 bg-surface-container-lowest border border-outline-variant rounded-xl focus:border-primary focus:ring-2 focus:ring-primary transition-all text-body-md outline-none appearance-none disabled:opacity-70 disabled:cursor-not-allowed"
                   required
                 >
                   <option value="">Select employee</option>

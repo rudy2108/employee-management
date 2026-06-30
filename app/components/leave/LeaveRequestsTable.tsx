@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import type { LeaveRequestWithEmployee } from '../../services/Api';
 import { Button } from "../ui/Button";
 import {
   TableContainer,
@@ -33,21 +34,6 @@ const STATUS_LABELS: Record<LeaveStatus, string> = {
   approved: "Approved",
   rejected: "Rejected",
 };
-
-interface Employee {
-  id: string | number;
-  fullName: string;
-  department: string;
-}
-
-interface LeaveRequestWithEmployee {
-  id: string | number;
-  type: string;
-  reason?: string;
-  appliedDate: string;
-  status: string;
-  employee: Employee;
-}
 
 interface LeaveRequestsTableProps {
   filtered: LeaveRequestWithEmployee[];

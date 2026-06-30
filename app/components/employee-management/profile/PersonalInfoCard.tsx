@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface PersonalInfoCardProps {
   dob?: string;
   gender?: string;

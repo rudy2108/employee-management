@@ -1,3 +1,4 @@
+import type { JobApplication } from '../../services/Api';
 import { Button } from "../ui/Button";
 import {
   TableContainer,
@@ -34,16 +35,6 @@ const STATUS_VARIANT: Record<string, "warning" | "primary" | "error"> = {
   approved: 'primary',
   rejected: 'error',
 };
-
-interface JobApplication {
-  id: string | number;
-  fullName: string;
-  email: string;
-  position: string;
-  department: string;
-  appliedDate: string;
-  status: string;
-}
 
 interface JobApplicationsTableProps {
   applications: JobApplication[];

@@ -1,3 +1,4 @@
+import type { LeaveRequestWithEmployee } from '../../services/Api';
 import { Button } from '../ui/Button';
 
 type LeaveStatus = 'pending' | 'hr_approved' | 'hr_rejected' | 'approved' | 'rejected';
@@ -9,21 +10,6 @@ const statusConfig: Record<LeaveStatus, { label: string; className: string }> = 
   approved: { label: 'Approved', className: 'bg-primary-container/20 text-on-primary-container' },
   rejected: { label: 'Rejected', className: 'bg-error-container/50 text-error' },
 };
-
-interface Employee {
-  id: string | number;
-  fullName: string;
-  department: string;
-}
-
-interface LeaveRequestWithEmployee {
-  id: string | number;
-  type: string;
-  reason?: string;
-  appliedDate: string;
-  status: string;
-  employee: Employee;
-}
 
 interface LeaveRequestDetailModalProps {
   isOpen: boolean;

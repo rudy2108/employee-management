@@ -1,18 +1,7 @@
-interface Employee {
-  id: string | number;
-  fullName: string;
-  department: string;
-}
-
-interface LeaveWithEmployee {
-  id: string | number;
-  type: string;
-  appliedDate: string;
-  employee: Employee;
-}
+import type { LeaveRequestWithEmployee } from '../../services/Api';
 
 interface UpcomingApprovedLeavesProps {
-  upcomingLeaves: LeaveWithEmployee[];
+  upcomingLeaves: LeaveRequestWithEmployee[];
 }
 
 export default function UpcomingApprovedLeaves({ upcomingLeaves }: UpcomingApprovedLeavesProps) {

@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface LeaveSummaryCardProps {
   leavesTaken?: number;
   leaveBalance?: number;

@@ -34,8 +34,6 @@ interface EmployeeTableProps {
   searchQuery: string;
   employees: Employee[];
   onDelete: (id: string | number) => void;
-  onOpenModal: (e: React.MouseEvent, id: string | number, name: string) => void;
-  onCancelLeave: (e: React.MouseEvent, id: string | number) => void;
 }
 
 interface EmployeeLeaveStats {
@@ -51,8 +49,6 @@ export default function EmployeeTable({
   searchQuery,
   employees,
   onDelete,
-  onOpenModal,
-  onCancelLeave,
 }: EmployeeTableProps) {
   const leaveStatsByEmployee = useMemo(() => {
     const map = new Map<string | number, EmployeeLeaveStats>();
@@ -173,27 +169,6 @@ export default function EmployeeTable({
                         <span className="material-symbols-outlined text-[18px]">edit</span>
                       </Link>
                     </Button>
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      type="button"
-                      onClick={(e) => onOpenModal(e, emp.id, emp.fullName)}
-                      title="Request Leave"
-                    >
-                      <span className="material-symbols-outlined text-[20px]">event_note</span>
-                    </Button>
-                    {hasPending && (
-                      <Button
-                        variant="ghost"
-                        size="icon"
-                        type="button"
-                        onClick={(e) => onCancelLeave(e, emp.id)}
-                        className="text-[#F59E0B] bg-[#F59E0B]/10 hover:bg-[#F59E0B]/20"
-                        title="Cancel Pending Leave"
-                      >
-                        <span className="material-symbols-outlined text-[20px]">event_busy</span>
-                      </Button>
-                    )}
                     <Button
                       variant="ghost"
                       size="icon"

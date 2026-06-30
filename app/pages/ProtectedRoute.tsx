@@ -1,38 +1,57 @@
-import { Navigate, Outlet } from 'react-router'
 import { Suspense, useState } from 'react'
 import { useSelector } from 'react-redux'
+import { Navigate, Outlet } from 'react-router'
 import type { RootState } from '../Store'
-import Sidebar from '../components/layout/Sidebar'
-import EmployeeSidebar from '../components/layout/EmployeeSidebar'
+import Sidebar, { type SidebarNavItem } from '../components/layout/Sidebar'
 
 export default function ProtectedRoute() {
   const isAuthenticated = useSelector((s: RootState) => s.auth.isAuthenticated)
   const admin = useSelector((s: RootState) => s.auth.admin)
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
+  const [clockedIn, setClockedIn] = useState(false)
 
   if (!isAuthenticated) return <Navigate to="/login" replace />
 
-  // Determine which sidebar to show based on the user's role.
-  // Admins get the collapsible admin sidebar; all other roles get the employee sidebar.
   const isAdmin = admin?.role === 'admin'
+
+  const adminLinks: SidebarNavItem[] = [
+    { to: '/dashboard', icon: 'dashboard', label: 'Dashboard' },
+    { to: '/hr-administration', icon: 'admin_panel_settings', label: 'HR Administration' },
+    { to: '/employee-management', icon: 'badge', label: 'Employee Management' },
+    { to: '/leave', icon: 'event_busy', label: 'Leave' },
+    { to: '/employee-problems', icon: 'report_problem', label: 'Employee Problems' },
+  ]
+
+  const employeeLinks: SidebarNavItem[] = [
+    { to: '/employee-dashboard', icon: 'dashboard', label: 'My Dashboard' },
+    { to: '/employee-profile', icon: 'person', label: 'My Profile' },
+    { to: '/employee-leave', icon: 'calendar_today', label: 'My Leave' },
+    { to: '/employee-support', icon: 'report_problem', label: 'Support' },
+  ]
+
+  const employeeBottomLinks: SidebarNavItem[] = []
 
   return (
     <div className="text-on-background font-body-md antialiased overflow-x-hidden" style={{ backgroundColor: '#F8FAFC' }}>
-      {isAdmin ? (
-        // Admin sidebar — collapsible
-        <Sidebar isCollapsed={sidebarCollapsed} onToggle={() => setSidebarCollapsed(!sidebarCollapsed)} />
-      ) : (
-        // Employee sidebar — fixed 280px, no collapse
-        <EmployeeSidebar />
-      )}
+      <Sidebar
+        isCollapsed={sidebarCollapsed}
+        onToggle={() => setSidebarCollapsed(!sidebarCollapsed)}
+        navLinks={isAdmin ? adminLinks : employeeLinks}
+        bottomLinks={[]}
+        userName={admin?.name ?? (isAdmin ? 'Admin User' : 'Employee')}
+        userEmail={admin?.email ?? ''}
+        userRole={isAdmin ? 'HR Manager' : 'Employee'}
+        showToggleButton={true}
+        expandedWidthClass={isAdmin ? 'w-[240px]' : 'w-[280px]'}
+        collapsedWidthClass="w-[64px]"
+      />
 
-      {/* Content area: offset left margin based on sidebar type and state */}
       <div
         className={`flex flex-col min-h-screen transition-all duration-300 ${
-          isAdmin
-            ? sidebarCollapsed
-              ? 'md:ml-[64px]'
-              : 'md:ml-[240px]'
+          sidebarCollapsed
+            ? 'md:ml-[64px]'
+            : isAdmin
+            ? 'md:ml-[240px]'
             : 'md:ml-[280px]'
         }`}
       >

@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import type { LeaveRequestWithEmployee, LeaveRequest } from '../../services/Api';
 import { Button } from '../ui/Button';
 import {
   TableContainer,
@@ -12,28 +13,10 @@ import {
   TableAvatar,
   TableBadge,
 } from '../ui/DataTable';
-import { computeLeaveDays, type LeaveRequest } from '../../services/Api';
+import { computeLeaveDays } from '../../services/Api';
 import LeaveDetailModal from './LeaveDetailModal';
 
 type FilterTab = 'all' | 'urgent';
-
-interface Employee {
-  id: string | number;
-  fullName: string;
-  department: string;
-  totalLeaves: number;
-}
-
-interface LeaveRequestWithEmployee {
-  id: string | number;
-  type: string;
-  duration: string;
-  appliedDate: string;
-  reason?: string;
-  startDate?: string;
-  endDate?: string;
-  employee: Employee;
-}
 
 interface LeavePreApprovalTableProps {
   filteredRequests: LeaveRequestWithEmployee[];

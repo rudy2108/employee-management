@@ -1,11 +1,20 @@
 import { useSearchParams } from 'react-router'
 
-function Header(){
+type HeaderProps = {
+  placeholder?: string;
+  onSearch?: (q: string) => void;
+};
+
+function Header({ placeholder = 'Search employees, documents...', onSearch }: HeaderProps){
   const [searchParams, setSearchParams] = useSearchParams()
   const query = searchParams.get('q') ?? ''
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
+    if (onSearch) {
+      onSearch(value)
+      return
+    }
     setSearchParams((prev) => {
       if (value) {
         prev.set('q', value)
@@ -29,7 +38,7 @@ function Header(){
               <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
               <input
                 className="pl-9 pr-3 py-1.5 bg-surface-container-high border-none rounded-full text-body-md font-body-md text-on-surface w-56 focus:outline-none focus:ring-0 placeholder:text-on-surface-variant/70"
-                placeholder="Search employees, documents..."
+                placeholder={placeholder}
                 type="text"
                 value={query}
                 onChange={handleSearch}

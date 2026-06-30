@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react'
+import { useCallback, useMemo } from 'react'
 import { Link, useSearchParams } from 'react-router'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { employeeAPI, leaveAPI, pageConfigAPI, pageStatAPI } from '../../services/Api'
@@ -6,22 +6,7 @@ import Header from '../../components/layout/Header'
 import { StatCard, StatCardContent } from '../../components/ui/StatCard'
 import { PageHeader } from '../../components/ui/PageHeader'
 import EmployeeTable from '../../components/employee-management/EmployeeTable'
-import LeaveRequestModal from '../../components/employee-management/LeaveRequestModal'
 import { Button } from '../../components/ui/Button'
-
-interface LeaveModalState {
-  open: boolean
-  employeeId: string | number | null
-  employeeName: string
-}
-
-const EMPTY_FORM = {
-  reason: '',
-  urgency: 'regular' as 'immediate' | 'regular',
-  startDate: '',
-  endDate: '',
-  singleDay: false,
-}
 
 export default function EmployeeManagementPage() {
   const queryClient = useQueryClient()
@@ -34,16 +19,6 @@ export default function EmployeeManagementPage() {
   const deleteEmployeeMutation = useMutation({
     mutationFn: (id: string | number) => employeeAPI.delete(id),
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ['employees'] }),
-  })
-
-  const deleteLeaveMutation = useMutation({
-    mutationFn: (id: string | number) => leaveAPI.delete(id),
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: ['leaves'] }),
-  })
-
-  const createLeaveMutation = useMutation({
-    mutationFn: (data: Parameters<typeof leaveAPI.create>[0]) => leaveAPI.create(data),
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: ['leaves'] }),
   })
 
   const [searchParams] = useSearchParams()
@@ -78,53 +53,7 @@ export default function EmployeeManagementPage() {
     }
   }, [filteredEmployees])
 
-  const [modal, setModal] = useState<LeaveModalState>({ open: false, employeeId: null, employeeName: '' })
-  const [form, setForm] = useState(EMPTY_FORM)
-  const [formError, setFormError] = useState('')
-
-  const openModal = useCallback((e: React.MouseEvent, id: string | number, name: string) => {
-    e.preventDefault()
-    e.stopPropagation()
-    setForm(EMPTY_FORM)
-    setFormError('')
-    setModal({ open: true, employeeId: id, employeeName: name })
-  }, [])
-
-  const closeModal = useCallback(() => setModal({ open: false, employeeId: null, employeeName: '' }), [])
-
-  const handleCancelLeave = useCallback((e: React.MouseEvent, id: string | number) => {
-    e.preventDefault()
-    e.stopPropagation()
-    const pending = leaveRequests.find((r) => r.employeeId === id && (r.status === 'pending' || r.status === 'hr_approved'))
-    if (pending) deleteLeaveMutation.mutate(pending.id)
-  }, [leaveRequests, deleteLeaveMutation])
-
   const handleDelete = useCallback((id: string | number) => deleteEmployeeMutation.mutate(id), [deleteEmployeeMutation])
-
-  const handleFormChange = useCallback((updates: Partial<typeof EMPTY_FORM>) => setForm((f) => ({ ...f, ...updates })), [])
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!form.reason.trim()) { setFormError('Please provide a reason for leave.'); return }
-    if (!form.startDate) { setFormError('Please select a start date.'); return }
-    if (!form.singleDay && !form.endDate) { setFormError('Please select an end date.'); return }
-    if (!form.singleDay && form.endDate < form.startDate) { setFormError('End date cannot be before start date.'); return }
-
-    const endDate = form.singleDay ? form.startDate : form.endDate
-    const duration = form.startDate === endDate ? '1 day' : `${form.startDate} to ${endDate}`
-
-    createLeaveMutation.mutate({
-      employeeId: modal.employeeId!,
-      status: 'pending',
-      type: form.urgency === 'immediate' ? 'Immediate Leave' : 'Regular Leave',
-      duration,
-      appliedDate: new Date().toISOString().split('T')[0],
-      reason: form.reason.trim(),
-      startDate: form.startDate,
-      endDate,
-    })
-    closeModal()
-  }
 
   return (
     <>
@@ -157,21 +86,8 @@ export default function EmployeeManagementPage() {
           searchQuery={searchQuery}
           employees={employees}
           onDelete={handleDelete}
-          onOpenModal={openModal}
-          onCancelLeave={handleCancelLeave}
         />
       </main>
-
-      {modal.open && (
-        <LeaveRequestModal
-          employeeName={modal.employeeName}
-          form={form}
-          formError={formError}
-          onClose={closeModal}
-          onFormChange={handleFormChange}
-          onSubmit={handleSubmit}
-        />
-      )}
     </>
   )
 }

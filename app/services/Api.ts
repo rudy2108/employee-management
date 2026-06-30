@@ -119,11 +119,24 @@ export interface LeaveRequest {
   endDate?: string
 }
 
+export interface LeaveRequestWithEmployee extends LeaveRequest {
+  employee: Employee
+}
+
 export interface Holiday {
   id: string | number
   name: string
   date: string
   type: 'Public' | 'Optional'
+}
+
+export interface LeaveTypeRow {
+  label: string
+  icon: string
+  color: string
+  barColor: string
+  days: number
+  total: number
 }
 
 export const leaveAPI = {
@@ -313,6 +326,86 @@ export const optionsAPI = {
 
   fetchProblemPriorities: async (): Promise<Option[]> => {
     const response = await apiClient.get('/problemPriorities')
+    return response.data
+  },
+}
+
+export interface LeaveStatCard {
+  id: number
+  icon: string
+  iconBg: string
+  iconColor: string
+  label: string
+  unit: string
+  badge: string
+  statKey: 'annualBalance' | 'sickLeaveUsed' | 'pendingLeaves'
+}
+
+export const leaveStatCardAPI = {
+  fetchAll: async (): Promise<LeaveStatCard[]> => {
+    const response = await apiClient.get('/leaveStatCards')
+    return response.data
+  },
+}
+
+export interface ResourceCard {
+  id: number
+  icon: string
+  iconBg: string
+  iconColor: string
+  title: string
+  description: string
+}
+
+export const resourceCardAPI = {
+  fetchAll: async (): Promise<ResourceCard[]> => {
+    const response = await apiClient.get('/resourceCards')
+    return response.data
+  },
+}
+
+export interface ReportProblemCard {
+  id: number
+  icon: string
+  iconBg: string
+  iconColor: string
+  title: string
+  description: string
+  buttonLabel: string
+  buttonIcon: string
+}
+
+export const reportProblemCardAPI = {
+  fetchAll: async (): Promise<ReportProblemCard[]> => {
+    const response = await apiClient.get('/reportProblemCard')
+    return response.data
+  },
+}
+
+export interface TicketStatus {
+  id: string
+  statusIconColor: string
+  statusText: string
+  textColor: string
+}
+
+export const ticketStatusAPI = {
+  fetchAll: async (): Promise<TicketStatus[]> => {
+    const response = await apiClient.get('/ticketStatuses')
+    return response.data
+  },
+}
+
+export interface TicketCategory {
+  id: string
+  categories: string[]
+  bgColor: string
+  textColor: string
+}
+
+export const ticketCategoryAPI = {
+  fetchAll: async (): Promise<TicketCategory[]> => {
+    const response = await apiClient.get('/ticketCategories')
     return response.data
   },
 }

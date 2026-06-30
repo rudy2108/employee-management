@@ -1,8 +1,5 @@
+import type { LeaveRequest } from '../../services/Api';
 import { Button } from "../ui/Button";
-
-interface LeaveRequest {
-  status: string;
-}
 
 interface AdminToolsCardProps {
   leaveRequests: LeaveRequest[];

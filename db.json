@@ -60,8 +60,6 @@
     },
     {
       "fullName": "Vikram Singh",
-      "username": "vikram.singh@gmail.com",
-      "password": "Password@123",
       "empId": "0005",
       "email": "vikram.singh@gmail.com",
       "phone": "9876543214",
@@ -69,10 +67,8 @@
       "designation": "Frontend Developer",
       "dateOfJoining": "2026-06-05",
       "status": "contract",
-      "id": "emp005",
       "totalLeaves": 12,
-      "sickLeaves": 9,
-      "personalLeaves": 3
+      "id": "emp005"
     },
     {
       "fullName": "Ananya Mehta",
@@ -412,6 +408,17 @@
       "startDate": "2026-07-01",
       "endDate": "2026-07-03",
       "id": "kgRuBEVe4VM"
+    },
+    {
+      "employeeId": "emp005",
+      "status": "approved",
+      "type": "Regular Leave",
+      "duration": "2026-07-06 to 2026-07-10",
+      "appliedDate": "2026-06-30",
+      "reason": "Wedding",
+      "startDate": "2026-07-06",
+      "endDate": "2026-07-10",
+      "id": "qlhd-V-KK_w"
     }
   ],
   "holidays": [
@@ -580,6 +587,16 @@
       "filedDate": "2026-06-24",
       "description": "My salary for this month does not include the overtime hours I worked. I request a review of the payroll calculation and clarification regarding the missing amount.",
       "id": "O43GRg-l-QA"
+    },
+    {
+      "ticketId": "TKT-0530",
+      "employeeId": "emp005",
+      "category": "Pay Dispute",
+      "status": "resolved",
+      "priority": "high",
+      "filedDate": "2026-06-30",
+      "description": "Someone stole my purse.",
+      "id": "vnzw8UQMU-w"
     }
   ],
   "jobApplications": [
@@ -980,6 +997,132 @@
       "id": "4",
       "value": "critical",
       "label": "Critical"
+    }
+  ],
+  "leaveStatCards": [
+    {
+      "id": "1",
+      "icon": "event_available",
+      "iconBg": "bg-primary-container/20",
+      "iconColor": "text-primary",
+      "label": "Annual Leave Balance",
+      "unit": "Days",
+      "badge": "+2 this mo",
+      "statKey": "annualBalance"
+    },
+    {
+      "id": "2",
+      "icon": "medical_services",
+      "iconBg": "bg-secondary-container/30",
+      "iconColor": "text-secondary",
+      "label": "Sick Leave Used",
+      "unit": "Days",
+      "badge": "Policy Limit: 10",
+      "statKey": "sickLeaveUsed"
+    },
+    {
+      "id": "3",
+      "icon": "pending_actions",
+      "iconBg": "bg-tertiary-container/30",
+      "iconColor": "text-tertiary",
+      "label": "Pending Requests",
+      "unit": "Active",
+      "statKey": "pendingLeaves"
+    }
+  ],
+  "resourceCards": [
+    {
+      "id": "1",
+      "icon": "help",
+      "iconBg": "bg-secondary-container",
+      "iconColor": "text-secondary",
+      "title": "FAQs",
+      "description": "Find quick answers to common questions."
+    },
+    {
+      "id": "2",
+      "icon": "description",
+      "iconBg": "bg-primary-container/30",
+      "iconColor": "text-primary",
+      "title": "HR Policies",
+      "description": "Read guidelines on leave, conduct, and more."
+    },
+    {
+      "id": "3",
+      "icon": "computer",
+      "iconBg": "bg-tertiary-container",
+      "iconColor": "text-tertiary",
+      "title": "IT Support",
+      "description": "Remote assistance and device troubleshooting."
+    },
+    {
+      "id": "4",
+      "icon": "payments",
+      "iconBg": "bg-secondary-container",
+      "iconColor": "text-secondary",
+      "title": "Payroll Help",
+      "description": "Issues with salary, tax, or reimbursements."
+    }
+  ],
+  "reportProblemCard": [
+    {
+      "id": "1",
+      "icon": "warning",
+      "iconBg": "bg-error-container",
+      "iconColor": "text-error",
+      "title": "Report a Problem",
+      "description": "Encountered an issue? File a grievance or report a technical glitch and our team will get back to you within 24 hours.",
+      "buttonLabel": "Open New Ticket",
+      "buttonIcon": "add_circle"
+    }
+  ],
+  "ticketStatuses": [
+    {
+      "id": "open",
+      "statusIconColor": "bg-error",
+      "statusText": "Open",
+      "textColor": "text-error"
+    },
+    {
+      "id": "in_progress",
+      "statusIconColor": "bg-primary animate-pulse",
+      "statusText": "In Progress",
+      "textColor": "text-primary"
+    },
+    {
+      "id": "resolved",
+      "statusIconColor": "bg-outline",
+      "statusText": "Resolved",
+      "textColor": "text-on-surface-variant"
+    }
+  ],
+  "ticketCategories": [
+    {
+      "id": "default",
+      "categories": [
+        "General",
+        "Other"
+      ],
+      "bgColor": "bg-surface-container-highest",
+      "textColor": "text-on-surface-variant"
+    },
+    {
+      "id": "technical",
+      "categories": [
+        "Technical",
+        "Hardware"
+      ],
+      "bgColor": "bg-tertiary-container",
+      "textColor": "text-on-tertiary-container"
+    },
+    {
+      "id": "payroll",
+      "categories": [
+        "Payroll",
+        "Pay Dispute"
+      ],
+      "bgColor": "bg-secondary-container",
+      "textColor": "text-on-secondary-container"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

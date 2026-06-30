@@ -1,10 +1,8 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useMemo, useCallback, useState } from "react";
-import LogProblem from "../../components/problems/LogProblem";
 import ProblemsFiltersBar from "../../components/problems/ProblemsFiltersBar";
 import ProblemsTable from "../../components/problems/ProblemsTable";
 import ViewProblemModal from "../../components/problems/ViewProblemModal";
-import { Button } from "../../components/ui/Button";
 import { PageHeader } from "../../components/ui/PageHeader";
 import { StatCard, StatCardContent } from "../../components/ui/StatCard";
 import type { Employee, EmployeeProblem } from "../../services/Api";
@@ -33,7 +31,6 @@ export default function EmployeeProblemsPage() {
   const [search, setSearch] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("all");
   const [statusFilter, setStatusFilter] = useState("all");
-  const [isLogProblemOpen, setIsLogProblemOpen] = useState(false);
   const [selectedProblem, setSelectedProblem] = useState<(EmployeeProblem & { employee: Employee }) | null>(null);
   const [isViewModalOpen, setIsViewModalOpen] = useState(false);
 
@@ -93,14 +90,7 @@ export default function EmployeeProblemsPage() {
   return (
     <>
       <main className="flex-1 p-4 md:p-4 space-y-4">
-          <PageHeader title={pageConfig?.title ?? ''} subtitle={pageConfig?.subtitle ?? ''}>
-            <Button
-              onClick={() => setIsLogProblemOpen(true)}
-            >
-              <span className="material-symbols-outlined text-[18px]">add_moderator</span>
-              Log New Problem
-            </Button>
-          </PageHeader>
+          <PageHeader title={pageConfig?.title ?? ''} subtitle={pageConfig?.subtitle ?? ''} />
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
             {statCards.map((card) => {
@@ -140,11 +130,6 @@ export default function EmployeeProblemsPage() {
           </div>
         </main>
 
-      <LogProblem
-        isOpen={isLogProblemOpen}
-        onClose={() => setIsLogProblemOpen(false)}
-        employees={employees}
-      />
       <ViewProblemModal
         isOpen={isViewModalOpen}
         onClose={() => setIsViewModalOpen(false)}
